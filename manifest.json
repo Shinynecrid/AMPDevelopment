@@ -1,9 +1,12 @@
-[
-  {
-    "Id": "contagion",
-    "Name": "Contagion",
-    "Description": "Contagion Dedicated Server",
-    "Module": "GenericModule",
-    "Template": "GenericModule/contagion.kvp"
-  }
-]
+{
+  "RepositoryName": "AMPDevelopment",
+  "Templates": [
+    {
+      "Id": "contagion",
+      "Name": "Contagion",
+      "Description": "Contagion Dedicated Server via Wine",
+      "Module": "GenericModule",
+      "Template": "GenericModule/contagion.kvp"
+    }
+  ]
+}
