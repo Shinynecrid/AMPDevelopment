@@ -1,25 +1,38 @@
-[GenericModule.Meta]
-GenericModule.Meta.AppConfigId=contagion
-GenericModule.Meta.DisplayName=Contagion
-GenericModule.Meta.Description=Contagion Dedicated Server
-GenericModule.Meta.DisplayImageSource=https://cdn.cloudflare.steamstatic.com/steam/apps/238430/header.jpg
-GenericModule.Meta.OS=Windows
+Meta.DisplayName=Contagion
+Meta.Description=Contagion Dedicated Server
+Meta.OS=Windows
+Meta.AarchSupport=None
+Meta.Arch=x86_64
+Meta.Author=Shinynecrid
+Meta.DisplayImageSource=steam:238430
+Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.Ports.$GamePort}
+Meta.ConfigManifest=contagionconfig.json
+Meta.MetaConfigManifest=contagionmetaconfig.json
+Meta.ConfigRoot=contagion.kvp
+Meta.SpecificDockerImage=cubecoders/ampbase:wine-stable
+Meta.DockerRequired=True
+Meta.ContainerPolicy=Enforced
+Meta.ContainerPolicyReason=Requires Wine container on Linux
+Meta.AppConfigId=a3891bb4-52d3-4f2e-bf72-cc684a86b5b1
 
-[GenericModule.App]
-ApplicationName=Contagion
-Executable=srcds.exe
-AppId=293030
-SteamAppPlatform=windows
+App.DisplayName=Contagion
+App.RootDir=./contagion/
+App.BaseDirectory=./contagion/293030/
+App.ExecutableWin=293030\srcds.exe
+App.WorkingDir=293030
+App.CommandLineArgs=-game contagion -console -usercon +ip 0.0.0.0 -port {{$GamePort}} +maxplayers {{MaxPlayers}} +map {{MapName}} {{$FormattedArgs}}
+App.ExitMethod=String
+App.ExitTimeout=30
+App.ExitString=quit
+App.HasWriteableConsole=True
+App.HasReadableConsole=True
+App.Ports=@IncludeJson[contagionports.json]
+App.PrimaryApplicationPortRef=GamePort
+App.UniversalSleepSteamQueryPortRef=QueryPort
+App.UpdateSources=@IncludeJson[contagionupdates.json]
+App.SteamUpdateAnonymousLogin=True
+App.ApplicationReadyMode=RegexMatch
 
-# Process Management
-ConsoleMode=StdInOut
-ReadyText=Connection to Steam servers successful
-StopCommand=quit
-StopMethod=SendString
-KillTimeout=30
-
-# Launch Arguments
-Arguments=-game contagion -console -usercon +ip 0.0.0.0 -port {{$ApplicationPort1}} +maxplayers {{MaxPlayers}} +map {{MapName}}
-
-# Containerization
-ContainerPolicy=wine-stable
+Console.AppReadyRegex=^Connection to Steam servers successful
+Console.UserJoinRegex=^"(?<username>.+?)<(?<userid>\d+)>" entered the game
+Console.UserLeaveRegex=^Dropped "(?<username>.+?)" from server
