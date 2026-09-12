@@ -1,40 +1,49 @@
 Meta.DisplayName=Contagion
-Meta.Description=Contagion Dedicated Server
-Meta.OS=Windows
-Meta.AarchSupport=None
+Meta.Description=Fast-paced cooperative and competitive zombie survival horror based on the Source Engine.
+Meta.OS=Windows,Linux
 Meta.Arch=x86_64
-Meta.Author=Shinynecrid
+Meta.Author=CubeCoders expert
+Meta.URL=https://www.contagion-game.com/
 Meta.DisplayImageSource=steam:238430
-Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.Ports.$GamePort}
+Meta.EndpointURIFormat=steam://connect/{ip}:{{$GamePort}}
 Meta.ConfigManifest=contagionconfig.json
 Meta.MetaConfigManifest=contagionmetaconfig.json
 Meta.ConfigRoot=contagion.kvp
+Meta.MinAMPVersion=2.4.7
 Meta.SpecificDockerImage=cubecoders/ampbase:wine-stable
-Meta.DockerRequired=False
-Meta.DockerBaseReadOnly=False
 Meta.ContainerPolicy=Supported
-Meta.ContainerPolicyReason=
-Meta.ConfigReleaseState=NotSpecified
-Meta.AppConfigId=a3891bb4-52d3-4f2e-bf72-cc684a86b5b1
 
 App.DisplayName=Contagion
-App.RootDir=./contagion/
-App.BaseDirectory=./contagion/293030/
-App.ExecutableWin=293030\srcds.exe
-App.WorkingDir=293030
-App.CommandLineArgs=-game contagion -console -usercon +ip 0.0.0.0 -port {{$GamePort}} +maxplayers {{MaxPlayers}} +map {{MapName}} {{$FormattedArgs}}
+App.RootDir=./contagion_ds/
+App.BaseDirectory=./contagion_ds/
+App.ExecutableWin=srcds.exe
+App.WorkingDir=
+App.CommandLineArgs=-game contagion -console -usercon +ip 0.0.0.0 +port {{$GamePort}} +maxplayers {{MaxPlayers}} +map {{MapName}}
 App.ExitMethod=String
-App.ExitTimeout=30
+App.ExitTimeout=15
 App.ExitString=quit
 App.HasWriteableConsole=True
 App.HasReadableConsole=True
+
+# Port references for AMP's internal logic
 App.Ports=@IncludeJson[contagionports.json]
 App.PrimaryApplicationPortRef=GamePort
-App.UniversalSleepSteamQueryPortRef=GamePort
-App.UpdateSources=@IncludeJson[contagionupdates.json]
-App.SteamUpdateAnonymousLogin=True
-App.ApplicationReadyMode=RegexMatch
+App.AdminPortRef=RCONPort
 
-Console.AppReadyRegex=^Connection to Steam servers successful
-Console.UserJoinRegex=^"(?<username>.+?)<(?<userid>\d+)>" entered the game
-Console.UserLeaveRegex=^Dropped "(?<username>.+?)" from server
+# Admin & RCON Settings
+App.AdminMethod=SourceRCON
+App.UseRandomAdminPassword=True
+App.PersistRandomPassword=True
+App.RCONConnectDelaySeconds=10
+
+# SteamCMD Settings
+App.SteamAppId=293030
+App.SteamUpdateAnonymousLogin=True
+# Forces Windows version for Wine compatibility on Linux
+App.EnvironmentVariables={"SteamAppId":"238430", "@Platform": "windows"}
+
+# Ready Detection and Monitoring
+App.ApplicationReadyMode=RegexMatch
+Console.AppReadyRegex=^(Connection to Steam servers successful|VAC secure mode is activated)
+Console.UserJoinRegex=^"(?<username>.+?)<\d+><(?<userid>STEAM_[\d:]+?)><.*>" entered the game$
+Console.UserLeaveRegex=^Dropped (?<username>.+?) from server
