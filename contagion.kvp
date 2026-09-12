@@ -1,7 +1,7 @@
 [GenericModule.Meta]
 GenericModule.Meta.AppConfigId=contagion
 GenericModule.Meta.DisplayName=Contagion
-GenericModule.Meta.Description=Contagion Dedicated Server (Wine)
+GenericModule.Meta.Description=Contagion Dedicated Server
 GenericModule.Meta.DisplayImageSource=https://cdn.cloudflare.steamstatic.com/steam/apps/238430/header.jpg
 GenericModule.Meta.OS=Windows
 
