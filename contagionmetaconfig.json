@@ -1,10 +1,29 @@
 [
-  {
-    "ConfigFile": "contagion/cfg/server.cfg",
-    "AutoMap": true,
-    "Importable": true,
-    "ConfigType": "kvp",
-    "ConfigFormat": "{0} \"{1}\"",
-    "ConfigFormatRegex": "^(?<key>\\S+)\\s+\"(?<value>.*)\"$"
-  }
+    {
+        "FileName": "contagion/cfg/server.cfg",
+        "ConfigType": "Text",
+        "Nodes": [
+            {
+                "Tag": "Hostname",
+                "SettingName": "Hostname",
+                "DisplayName": "Hostname",
+                "Mapping": "hostname \"(?<value>.*)\"",
+                "Setter": "hostname \"{{value}}\""
+            },
+            {
+                "Tag": "RconPassword",
+                "SettingName": "RconPassword",
+                "DisplayName": "RCON Password",
+                "Mapping": "rcon_password \"(?<value>.*)\"",
+                "Setter": "rcon_password \"{{value}}\""
+            },
+            {
+                "Tag": "ServerPassword",
+                "SettingName": "ServerPassword",
+                "DisplayName": "Server Password",
+                "Mapping": "sv_password \"(?<value>.*)\"",
+                "Setter": "sv_password \"{{value}}\""
+            }
+        ]
+    }
 ]
