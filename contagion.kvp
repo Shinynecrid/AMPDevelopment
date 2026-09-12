@@ -10,9 +10,11 @@ Meta.ConfigManifest=contagionconfig.json
 Meta.MetaConfigManifest=contagionmetaconfig.json
 Meta.ConfigRoot=contagion.kvp
 Meta.SpecificDockerImage=cubecoders/ampbase:wine-stable
-Meta.DockerRequired=True
-Meta.ContainerPolicy=Enforced
-Meta.ContainerPolicyReason=Requires Wine container on Linux
+Meta.DockerRequired=False
+Meta.DockerBaseReadOnly=False
+Meta.ContainerPolicy=Supported
+Meta.ContainerPolicyReason=
+Meta.ConfigReleaseState=NotSpecified
 Meta.AppConfigId=a3891bb4-52d3-4f2e-bf72-cc684a86b5b1
 
 App.DisplayName=Contagion
