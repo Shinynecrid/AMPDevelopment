@@ -1,3 +1,11 @@
+[GenericModule.Meta]
+GenericModule.Meta.AppConfigId=contagion
+GenericModule.Meta.DisplayName=Contagion
+GenericModule.Meta.Description=Contagion Dedicated Server (Wine)
+GenericModule.Meta.DisplayImageSource=https://cdn.cloudflare.steamstatic.com/steam/apps/238430/header.jpg
+GenericModule.Meta.OS=Windows
+
+[GenericModule.App]
 ApplicationName=Contagion
 Executable=srcds.exe
 AppId=293030
@@ -10,8 +18,8 @@ StopCommand=quit
 StopMethod=SendString
 KillTimeout=30
 
-# Launch Arguments - Hostname removed as it is handled by metaconfig/server.cfg
-Arguments=-game contagion -console -usercon +ip 0.0.0.0 -port {{PortNumber}} +maxplayers {{MaxPlayers}} +map {{MapName}}
+# Launch Arguments
+Arguments=-game contagion -console -usercon +ip 0.0.0.0 -port {{$ApplicationPort1}} +maxplayers {{MaxPlayers}} +map {{MapName}}
 
 # Containerization
 ContainerPolicy=wine-stable
