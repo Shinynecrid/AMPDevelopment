@@ -1,0 +1,43 @@
+[
+  {
+    "CategoryName": "Contagion Server Settings",
+    "Description": "General settings for the Contagion Dedicated Server",
+    "Settings": [
+      {
+        "Name": "Server Name",
+        "Description": "The name of your server as listed in the Steam server browser.",
+        "Type": "Text",
+        "Key": "hostname",
+        "Default": "Contagion Server hosted by AMP"
+      },
+      {
+        "Name": "Server Password",
+        "Description": "Password required to join the server (leave blank for public).",
+        "Type": "Password",
+        "Key": "sv_password",
+        "Default": ""
+      },
+      {
+        "Name": "RCON Password",
+        "Description": "Remote console administrative password.",
+        "Type": "Password",
+        "Key": "rcon_password",
+        "Default": ""
+      },
+      {
+        "Name": "Max Players",
+        "Description": "Maximum player limit for the server.",
+        "Type": "Number",
+        "Key": "MaxPlayers",
+        "Default": 8
+      },
+      {
+        "Name": "Default Map",
+        "Description": "Initial map to load on server launch.",
+        "Type": "Text",
+        "Key": "MapName",
+        "Default": "ce_biotec"
+      }
+    ]
+  }
+]
