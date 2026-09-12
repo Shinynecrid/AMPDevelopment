@@ -1,8 +1,8 @@
 [
     {
         "DisplayName": "Server Name",
-        "Category": "Contagion:settings",
-        "Subcategory": "Server",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Server Settings:dns",
         "Description": "Sets the name of the server to be displayed publicly.",
         "FieldName": "Hostname",
         "InputType": "text",
@@ -10,8 +10,8 @@
     },
     {
         "DisplayName": "Starting Map",
-        "Category": "Contagion:settings",
-        "Subcategory": "Server",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Server Settings:dns",
         "Description": "The map to load on startup.",
         "FieldName": "MapName",
         "InputType": "enum",
@@ -27,8 +27,8 @@
     },
     {
         "DisplayName": "Player Limit",
-        "Category": "Contagion:settings",
-        "Subcategory": "Server",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Server Settings:dns",
         "Description": "Maximum players allowed.",
         "FieldName": "$MaxUsers",
         "InputType": "number",
@@ -38,11 +38,21 @@
     },
     {
         "DisplayName": "Server Password",
-        "Category": "Contagion:security",
-        "Subcategory": "Security",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Security:lock",
         "Description": "If set, players must enter this to join.",
         "FieldName": "ServerPassword",
         "InputType": "password",
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "RCON Password",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Security:lock",
+        "Description": "RCON password for the server. Usually managed by AMP automatically.",
+        "FieldName": "$RemoteAdminPassword",
+        "InputType": "password",
+        "Hidden": true,
         "DefaultValue": ""
     }
 ]
