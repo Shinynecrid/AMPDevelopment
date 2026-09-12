@@ -1,28 +1,24 @@
 [
     {
-        "FileName": "contagion/cfg/server.cfg",
-        "ConfigType": "Text",
+        "ConfigFile": "contagion/cfg/server.cfg",
+        "ConfigType": "kvp",
+        "ConfigFormat": "{0} \"{1}\"",
+        "ConfigFormatRegex": "^(?<key>.+?) \"(?<value>.*?)\"$",
         "Nodes": [
             {
-                "Tag": "Hostname",
+                "Tag": "hostname",
                 "SettingName": "Hostname",
-                "DisplayName": "Hostname",
-                "Mapping": "hostname \"(?<value>.*)\"",
-                "Setter": "hostname \"{{value}}\""
+                "DisplayName": "Hostname"
             },
             {
-                "Tag": "RconPassword",
-                "SettingName": "RconPassword",
-                "DisplayName": "RCON Password",
-                "Mapping": "rcon_password \"(?<value>.*)\"",
-                "Setter": "rcon_password \"{{value}}\""
-            },
-            {
-                "Tag": "ServerPassword",
+                "Tag": "sv_password",
                 "SettingName": "ServerPassword",
-                "DisplayName": "Server Password",
-                "Mapping": "sv_password \"(?<value>.*)\"",
-                "Setter": "sv_password \"{{value}}\""
+                "DisplayName": "Server Password"
+            },
+            {
+                "Tag": "rcon_password",
+                "SettingName": "$RemoteAdminPassword",
+                "DisplayName": "RCON Password"
             }
         ]
     }
