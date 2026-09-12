@@ -1,0 +1,10 @@
+[
+  {
+    "ConfigFile": "contagion/cfg/server.cfg",
+    "AutoMap": true,
+    "Importable": true,
+    "ConfigType": "kvp",
+    "ConfigFormat": "{0} \"{1}\"",
+    "ConfigFormatRegex": "^(?<key>\\S+)\\s+\"(?<value>.*)\"$"
+  }
+]
