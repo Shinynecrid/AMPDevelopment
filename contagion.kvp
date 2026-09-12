@@ -1,0 +1,17 @@
+ApplicationName=Contagion
+Executable=srcds.exe
+AppId=293030
+SteamAppPlatform=windows
+
+# Process Management
+ConsoleMode=StdInOut
+ReadyText=Connection to Steam servers successful
+StopCommand=quit
+StopMethod=SendString
+KillTimeout=30
+
+# Launch Arguments - Hostname removed as it is handled by metaconfig/server.cfg
+Arguments=-game contagion -console -usercon +ip 0.0.0.0 -port {{PortNumber}} +maxplayers {{MaxPlayers}} +map {{MapName}}
+
+# Containerization
+ContainerPolicy=wine-stable

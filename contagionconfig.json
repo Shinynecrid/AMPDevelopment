@@ -1,0 +1,67 @@
+[
+    {
+        "GroupTitle": "Server Settings",
+        "Settings": [
+            {
+                "Name": "PortNumber",
+                "DisplayName": "Port Number",
+                "Description": "The network port the server listens on for game traffic and queries.",
+                "Type": "Number",
+                "Default": 27015,
+                "MinValue": 1024,
+                "MaxValue": 65535
+            },
+            {
+                "Name": "Hostname",
+                "DisplayName": "Server Name",
+                "Description": "The name of the server in the browser.",
+                "Type": "String",
+                "Default": "Contagion Dedicated Server"
+            },
+            {
+                "Name": "MapName",
+                "DisplayName": "Starting Map",
+                "Description": "The map to load on startup.",
+                "Type": "Enum",
+                "Default": "ce_barlowesquare",
+                "EnumValues": {
+                    "ce_barlowesquare": "Barlowe Square (Escape)",
+                    "ce_biotec": "Biotec (Escape)",
+                    "ce_harvest": "Harvest (Escape)",
+                    "ce_roanokepd": "Roanoke PD (Escape)",
+                    "cx_hospital": "Hospital (Extraction)",
+                    "cf_stonecreek": "Stone Creek (Flatline)"
+                }
+            },
+            {
+                "Name": "MaxPlayers",
+                "DisplayName": "Max Players",
+                "Description": "Maximum number of players allowed.",
+                "Type": "Number",
+                "Default": 8,
+                "MinValue": 1,
+                "MaxValue": 32
+            }
+        ]
+    },
+    {
+        "GroupTitle": "Security",
+        "Settings": [
+            {
+                "Name": "RconPassword",
+                "DisplayName": "RCON Password",
+                "Description": "Password for remote console access.",
+                "Type": "String",
+                "Default": "ChangeMe",
+                "IsPassword": true
+            },
+            {
+                "Name": "ServerPassword",
+                "DisplayName": "Server Password",
+                "Description": "If set, players must enter this to join.",
+                "Type": "String",
+                "Default": ""
+            }
+        ]
+    }
+]
