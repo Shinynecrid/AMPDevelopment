@@ -1,6 +1,6 @@
 Meta.DisplayName=Contagion
 Meta.Description=Fast-paced cooperative and competitive zombie survival horror based on the Source Engine.
-Meta.OS=Windows,Linux
+Meta.OS=Windows, Linux
 Meta.Arch=x86_64
 Meta.Author=CubeCoders Expert
 Meta.URL=https://www.contagion-game.com/
@@ -9,52 +9,43 @@ Meta.EndpointURIFormat=steam://connect/{ip}:{{$GamePort}}
 Meta.ConfigManifest=contagionconfig.json
 Meta.MetaConfigManifest=contagionmetaconfig.json
 Meta.ConfigRoot=contagion.kvp
-Meta.MinAMPVersion=2.4.7
+Meta.MinAMPVersion=2.5.0
 Meta.SpecificDockerImage=cubecoders/ampbase:wine-stable
 Meta.DockerRequired=False
 Meta.ContainerPolicy=Supported
 Meta.ConfigVersion=1
-# Replace this GUID if you want a fresh ID, otherwise this acts as the unique identifier
 Meta.AppConfigId=4c1e7a22-3bcf-4a88-b6da-cde28bce5fb2
-
 App.DisplayName=Contagion
-App.RootDir=./contagion_ds/
-App.BaseDirectory=./contagion_ds/
+App.RootDir=./contagion/
+App.BaseDirectory=./contagion/
 App.ExecutableWin=srcds.exe
-App.WorkingDir=
 App.WindowsCommandLineArgs=-FullStdOutLogOutput -nocrashdialog -norestart
-App.CommandLineArgs=-game contagion -console -usercon +ip 0.0.0.0 +port {{$GamePort}} +maxplayers {{MaxPlayers}} +map {{MapName}}
+App.CommandLineArgs=-game contagion -console -usercon +ip {{$ApplicationIPBinding}} +port {{$GamePort}} +maxplayers {{$MaxUsers}} +map {{MapName}} +rcon_password {{$RemoteAdminPassword}}
 App.ExitMethod=String
 App.ExitTimeout=15
 App.ExitString=quit
 App.HasWriteableConsole=True
 App.HasReadableConsole=True
-
-# Port and Admin Handling
 App.Ports=@IncludeJson[contagionports.json]
-App.PrimaryApplicationPortRef=GamePort
 App.AdminPortRef=RCONPort
-
-# Sleep Mode Support (Standard in Greelan Templates)
+App.PrimaryApplicationPortRef=GamePort
 App.UniversalSleepApplicationUDPPortRef=GamePort
 App.UniversalSleepSteamQueryPortRef=GamePort
-
-# Admin & RCON Settings
-App.AdminMethod=SourceRCON
+App.MaxUsers=8
 App.UseRandomAdminPassword=True
 App.PersistRandomPassword=True
+App.RemoteAdminPassword=
+App.AdminMethod=SourceRCON
 App.RCONConnectDelaySeconds=10
 App.RCONConnectRetrySeconds=5
 App.RCONHeartbeatMinutes=1
-
-# SteamCMD Settings
+App.UpdateSources=@IncludeJson[contagionupdates.json]
 App.SteamAppId=293030
 App.SteamUpdateAnonymousLogin=True
-# Forces Windows version for Wine compatibility on Linux and ensures library pathing
 App.EnvironmentVariables={"SteamAppId":"238430", "@Platform": "windows", "LD_LIBRARY_PATH":"./bin:{{$LD_LIBRARY_PATH}}"}
-
-# Ready Detection and Monitoring
 App.ApplicationReadyMode=RegexMatch
 Console.AppReadyRegex=^(Connection to Steam servers successful|VAC secure mode is activated)
 Console.UserJoinRegex=^"(?<username>.+?)<\d+><(?<userid>STEAM_[\d:]+?)><.*>" entered the game$
 Console.UserLeaveRegex=^Dropped (?<username>.+?) from server
+Limits.SleepMode=False
+Limits.SleepOnStart=False
