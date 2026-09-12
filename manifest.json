@@ -1,0 +1,9 @@
+[
+  {
+    "Id": "contagion",
+    "Name": "Contagion",
+    "Description": "Contagion Dedicated Server",
+    "Module": "GenericModule",
+    "Template": "GenericModule/contagion.kvp"
+  }
+]
