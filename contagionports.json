@@ -1,23 +1,18 @@
 [
-  {
-    "Protocol": "Both",
-    "Port": 27015,
-    "Ref": "GamePort",
-    "Name": "Game and Query Port",
-    "Description": "Primary UDP/TCP port for game traffic and Steam queries"
-  },
-  {
-    "Protocol": "UDP",
-    "Port": 27005,
-    "Ref": "ClientPort",
-    "Name": "Client Port",
-    "Description": "Port for internal game client traffic"
-  },
-  {
-    "Protocol": "UDP",
-    "Port": 27020,
-    "Ref": "SourceTVPort",
-    "Name": "SourceTV Port",
-    "Description": "Port for SourceTV spectator broadcasts"
-  }
+    {
+        "Name": "GamePort",
+        "DisplayName": "Primary Game Port",
+        "Description": "The main port used for game traffic and Steam queries.",
+        "DefaultPort": 27015,
+        "Protocol": "UDP",
+        "VariesWithSetting": "GamePort"
+    },
+    {
+        "Name": "RCONPort",
+        "DisplayName": "RCON Port",
+        "Description": "Source RCON Protocol port.",
+        "DefaultPort": 27015,
+        "Protocol": "TCP",
+        "VariesWithSetting": "GamePort"
+    }
 ]
