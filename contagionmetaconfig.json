@@ -1,19 +1,21 @@
 [
     {
         "ConfigFile": "contagion/cfg/server.cfg",
-        "ConfigType": "kvp",
-        "ConfigFormat": "{0} \"{1}\"",
-        "ConfigFormatRegex": "^(?<key>.+?) \"(?<value>.*?)\"$",
+        "ConfigType": "Text",
         "Nodes": [
             {
                 "Tag": "hostname",
                 "SettingName": "Hostname",
-                "DisplayName": "Hostname"
+                "DisplayName": "Hostname",
+                "Mapping": "hostname \"(?<value>.*)\"",
+                "Setter": "hostname \"{{value}}\""
             },
             {
                 "Tag": "sv_password",
                 "SettingName": "ServerPassword",
-                "DisplayName": "Server Password"
+                "DisplayName": "Server Password",
+                "Mapping": "sv_password \"(?<value>.*)\"",
+                "Setter": "sv_password \"{{value}}\""
             }
         ]
     }
