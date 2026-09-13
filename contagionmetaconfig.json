@@ -14,11 +14,6 @@
                 "Tag": "sv_password",
                 "SettingName": "ServerPassword",
                 "DisplayName": "Server Password"
-            },
-            {
-                "Tag": "rcon_password",
-                "SettingName": "$RemoteAdminPassword",
-                "DisplayName": "RCON Password"
             }
         ]
     }
