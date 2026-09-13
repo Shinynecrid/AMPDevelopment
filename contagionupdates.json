@@ -4,17 +4,8 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SteamCMD",
         "UpdateSourceData": "293030",
-        "UpdateSourceArgs": "238430",
+        "UpdateSourceTarget": "./",
         "UpdateSourceVersion": "public",
         "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Initial Config Creation",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "CreateFile",
-        "UpdateSourceData": "contagion/cfg/server.cfg",
-        "UpdateSourceArgs": "// Contagion Server Configuration\nhostname \"Contagion Dedicated Server\"\n",
-        "OverwriteExistingFiles": false,
-        "SkipOnFailure": true
     }
 ]
