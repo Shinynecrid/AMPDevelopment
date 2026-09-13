@@ -2,17 +2,19 @@
     {
         "DisplayName": "Server Name",
         "Category": "Contagion:stadia_controller",
-        "Subcategory": "Server",
-        "FieldName": "Hostname",
+        "Subcategory": "Server:dns:1",
+        "FieldName": "hostname",
         "InputType": "text",
+        "ParamFieldName": "hostname",
         "DefaultValue": "AMP Powered Contagion Server"
     },
     {
-        "DisplayName": "Starting Map",
+        "DisplayName": "Initial Map",
         "Category": "Contagion:stadia_controller",
-        "Subcategory": "Server",
-        "FieldName": "MapName",
+        "Subcategory": "Server:dns:1",
+        "FieldName": "map",
         "InputType": "enum",
+        "ParamFieldName": "map",
         "DefaultValue": "ce_barlowesquare",
         "EnumValues": {
             "ce_barlowesquare": "Barlowe Square (Escape)",
@@ -26,19 +28,31 @@
     {
         "DisplayName": "Player Limit",
         "Category": "Contagion:stadia_controller",
-        "Subcategory": "Server",
+        "Subcategory": "Server:dns:1",
         "FieldName": "$MaxUsers",
         "InputType": "number",
         "MinValue": "1",
         "MaxValue": "32",
+        "ParamFieldName": "maxplayers",
         "DefaultValue": "8"
     },
     {
         "DisplayName": "Server Password",
         "Category": "Contagion:stadia_controller",
-        "Subcategory": "Security",
-        "FieldName": "ServerPassword",
+        "Subcategory": "Security:lock:2",
+        "FieldName": "sv_password",
         "InputType": "password",
+        "ParamFieldName": "sv_password",
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "RCON Password",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Security:lock:2",
+        "FieldName": "$RemoteAdminPassword",
+        "InputType": "text",
+        "Hidden": true,
+        "ParamFieldName": "rcon_password",
         "DefaultValue": ""
     }
 ]
