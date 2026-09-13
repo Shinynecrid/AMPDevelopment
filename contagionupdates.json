@@ -7,5 +7,14 @@
         "UpdateSourceTarget": "293030",
         "UpdateSourceVersion": "public",
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Config Template",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "// Contagion Server Config\nhostname \"{{hostname}}\"\nsv_password \"{{sv_password}}\"\nrcon_password \"{{rcon_password}}\"\nwriteip\nwriteid\n",
+        "UpdateSourceArgs": "{{$FullRootDir}}AMP_server.cfg",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
     }
 ]
