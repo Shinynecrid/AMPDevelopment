@@ -1,9 +1,20 @@
 [
     {
-        "Protocol": "Both",
-        "Port": 27015,
-        "Ref": "ServerPort",
-        "Name": "Game and RCON Port",
-        "Description": "Port for game and RCON traffic"
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "293030",
+        "UpdateSourceTarget": "293030",
+        "UpdateSourceVersion": "public",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Config Template",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "// Contagion Server Config\nhostname \"{{hostname}}\"\nsv_password \"{{sv_password}}\"\nrcon_password \"{{rcon_password}}\"\nwriteip\nwriteid\n",
+        "UpdateSourceArgs": "{{$FullRootDir}}AMP_server.cfg",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
     }
 ]
