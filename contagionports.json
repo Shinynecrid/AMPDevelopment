@@ -1,20 +1,14 @@
-[
+{
+  "ManifestVersion": 1,
+  "Configurations": [
     {
-        "UpdateStageName": "SteamCMD Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "293030",
-        "UpdateSourceTarget": "293030",
-        "UpdateSourceVersion": "public",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Create Config Template",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "CreateFile",
-        "UpdateSourceData": "// Contagion Server Config\nhostname \"{{hostname}}\"\nsv_password \"{{sv_password}}\"\nrcon_password \"{{rcon_password}}\"\nwriteip\nwriteid\n",
-        "UpdateSourceArgs": "{{$FullRootDir}}AMP_server.cfg",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
+      "Name": "Contagion",
+      "Description": "Fast-paced cooperative and competitive zombie survival horror.",
+      "AppConfigId": "b1e29303-0c4f-4d32-9a3c-b2659e782d30",
+      "Category": "Generic",
+      "KVPPath": "contagion.kvp",
+      "ConfigManifestPath": "contagionconfig.json",
+      "MetaConfigManifestPath": "contagionmetaconfig.json"
     }
-]
+  ]
+}
