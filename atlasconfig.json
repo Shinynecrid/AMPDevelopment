@@ -1,0 +1,76 @@
+[
+    {
+        "DisplayName": "Server Name",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Server Settings:dns:1",
+        "FieldName": "ServerName",
+        "InputType": "text",
+        "ParamFieldName": "SessionName",
+        "DefaultValue": "AMP Powered ATLAS Server"
+    },
+    {
+        "DisplayName": "Server Password",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Server Settings:dns:1",
+        "FieldName": "ServerPassword",
+        "InputType": "password",
+        "ParamFieldName": "ServerPassword",
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Admin Password",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Server Settings:dns:1",
+        "FieldName": "AdminPassword",
+        "InputType": "password",
+        "ParamFieldName": "ServerAdminPassword",
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Player Limit",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Server Settings:dns:1",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "ParamFieldName": "MaxPlayers",
+        "DefaultValue": "10"
+    },
+    {
+        "DisplayName": "Grid Cell X Coordinate",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Grid Settings:grid_on:2",
+        "FieldName": "ServerX",
+        "InputType": "number",
+        "DefaultValue": "0"
+    },
+    {
+        "DisplayName": "Grid Cell Y Coordinate",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Grid Settings:grid_on:2",
+        "FieldName": "ServerY",
+        "InputType": "number",
+        "DefaultValue": "0"
+    },
+    {
+        "DisplayName": "Game Port",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Network Settings:settings_ethernet:3",
+        "FieldName": "$GamePort",
+        "InputType": "number"
+    },
+    {
+        "DisplayName": "Query Port",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Network Settings:settings_ethernet:3",
+        "FieldName": "$QueryPort",
+        "InputType": "number"
+    },
+    {
+        "DisplayName": "RCON Port",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Network Settings:settings_ethernet:3",
+        "FieldName": "$RCONPort",
+        "InputType": "number"
+    }
+]
