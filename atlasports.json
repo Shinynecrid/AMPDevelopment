@@ -15,7 +15,7 @@
     },
     {
         "Protocol": "TCP",
-        "Port": 57559,
+        "Port": 57570,
         "Ref": "RCONPort",
         "Name": "RCON Port",
         "Description": "Port for remote console (RCON) administration."
