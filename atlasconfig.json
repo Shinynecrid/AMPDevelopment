@@ -18,13 +18,17 @@
         "DefaultValue": ""
     },
     {
-        "DisplayName": "Admin Password",
+        "DisplayName": "RCON / Server Admin Password",
         "Category": "ATLAS:sailing",
         "Subcategory": "Server Settings:dns:1",
-        "FieldName": "AdminPassword",
-        "InputType": "password",
-        "ParamFieldName": "ServerAdminPassword",
-        "DefaultValue": ""
+        "Description": "See the Security and Privacy menu for configurable options for the server's RCON password. The RCON password is also used in the in-game console for players to access administrator commands.",
+        "Keywords": "rcon,password,serveradminpassword",
+        "FieldName": "RCONPassword",
+        "InputType": "hidden",
+        "IsFlagArgument": false,
+        "ParamFieldName": "RCONPassword",
+        "IncludeInCommandLine": false,
+        "EnumValues": {}
     },
     {
         "DisplayName": "Player Limit",

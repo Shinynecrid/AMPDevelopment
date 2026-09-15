@@ -35,6 +35,12 @@
       "URL": "{{RedisHost}}",
       "Port": {{RedisPort}},
       "Password": "{{RedisPassword}}"
+    },
+    {
+      "Name": "MonumentDB",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
     }
   ]
 }
