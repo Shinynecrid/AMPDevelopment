@@ -53,24 +53,30 @@
         "DefaultValue": "0"
     },
     {
-        "DisplayName": "Game Port",
+        "DisplayName": "Redis Database IP / Host",
         "Category": "ATLAS:sailing",
-        "Subcategory": "Network Settings:settings_ethernet:3",
-        "FieldName": "$GamePort",
-        "InputType": "number"
+        "Subcategory": "Database:storage:3",
+        "FieldName": "RedisHost",
+        "InputType": "text",
+        "DefaultValue": "127.0.0.1",
+        "Description": "IP address or hostname of the Redis database server."
     },
     {
-        "DisplayName": "Query Port",
+        "DisplayName": "Redis Database Port",
         "Category": "ATLAS:sailing",
-        "Subcategory": "Network Settings:settings_ethernet:3",
-        "FieldName": "$QueryPort",
-        "InputType": "number"
+        "Subcategory": "Database:storage:3",
+        "FieldName": "RedisPort",
+        "InputType": "number",
+        "DefaultValue": "6379",
+        "Description": "Port of the Redis database server (default 6379)."
     },
     {
-        "DisplayName": "RCON Port",
+        "DisplayName": "Redis Database Password",
         "Category": "ATLAS:sailing",
-        "Subcategory": "Network Settings:settings_ethernet:3",
-        "FieldName": "$RCONPort",
-        "InputType": "number"
+        "Subcategory": "Database:storage:3",
+        "FieldName": "RedisPassword",
+        "InputType": "password",
+        "DefaultValue": "18124",
+        "Description": "Password required to authenticate with the Redis database server."
     }
 ]

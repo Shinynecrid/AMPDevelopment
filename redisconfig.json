@@ -26,9 +26,18 @@
         "Category": "Redis:storage",
         "Subcategory": "Memory & Limits:memory:2",
         "FieldName": "maxmemory",
-        "InputType": "text",
-        "DefaultValue": "1gb",
-        "Description": "Memory threshold for Redis (e.g. 512mb, 1gb, 2gb, or 0 for unlimited)."
+        "InputType": "enum",
+        "EnumValues": {
+            "0": "Unlimited (No memory limit)",
+            "512mb": "512 MB",
+            "1gb": "1 GB",
+            "2gb": "2 GB (Recommended for ATLAS)",
+            "4gb": "4 GB",
+            "8gb": "8 GB",
+            "16gb": "16 GB"
+        },
+        "DefaultValue": "2gb",
+        "Description": "Memory threshold for Redis."
     },
     {
         "DisplayName": "Eviction Policy",
@@ -77,23 +86,5 @@
         "InputType": "number",
         "DefaultValue": "0",
         "Description": "Closes client connection after N seconds of inactivity (0 to disable)."
-    },
-    {
-        "DisplayName": "Redis Port",
-        "Category": "Redis:storage",
-        "Subcategory": "Network Settings:settings_ethernet:4",
-        "FieldName": "$ApplicationPort",
-        "InputType": "number",
-        "DefaultValue": "6379",
-        "Description": "TCP port Redis listens on."
-    },
-    {
-        "DisplayName": "Bind Address",
-        "Category": "Redis:storage",
-        "Subcategory": "Network Settings:settings_ethernet:4",
-        "FieldName": "$ApplicationIPBinding",
-        "InputType": "text",
-        "DefaultValue": "0.0.0.0",
-        "Description": "Interface IP address to bind to. Use 0.0.0.0 to listen on all interfaces."
     }
 ]

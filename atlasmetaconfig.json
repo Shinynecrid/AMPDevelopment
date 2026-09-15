@@ -1,24 +1,18 @@
 [
     {
-        "ConfigFile": "ShooterGame/Saved/Config/{{@Platform}}Server/GameUserSettings.ini",
-        "AutoMap": false,
-        "ConfigType": "ini",
-        "Nodes": [
-            {
-                "Section": "/Script/Engine.GameSession",
-                "Tag": "MaxPlayers",
-                "SettingName": "$MaxUsers"
-            },
-            {
-                "Section": "ServerSettings",
-                "Tag": "ServerPassword",
-                "SettingName": "ServerPassword"
-            },
-            {
-                "Section": "ServerSettings",
-                "Tag": "ServerAdminPassword",
-                "SettingName": "AdminPassword"
-            }
-        ]
+        "ConfigFile": "ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini",
+        "AutoMap": true,
+        "ConfigType": "ini"
+    },
+    {
+        "ConfigFile": "ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini",
+        "AutoMap": true,
+        "ConfigType": "ini"
+    },
+    {
+        "ConfigFile": "ShooterGame/ServerGrid.ServerOnly.json",
+        "AutoMap": true,
+        "ConfigType": "template",
+        "ConfigFileTemplate": "ShooterGame/AMP_ServerGrid.ServerOnly.json"
     }
 ]

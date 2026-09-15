@@ -16,5 +16,14 @@
         "UpdateSourceTarget": "1006030",
         "UpdateSourceVersion": "public",
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create ServerGrid Config Template",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "{\n  \"database\": {\n    \"Name\": \"Global\",\n    \"URL\": \"{{RedisHost}}\",\n    \"Port\": {{RedisPort}},\n    \"Password\": \"{{RedisPassword}}\"\n  },\n  \"TradeDB\": {\n    \"Name\": \"TradeDB\",\n    \"URL\": \"{{RedisHost}}\",\n    \"Port\": {{RedisPort}},\n    \"Password\": \"{{RedisPassword}}\"\n  }\n}\n",
+        "UpdateSourceArgs": "{{$FullBaseDir}}ShooterGame/AMP_ServerGrid.ServerOnly.json",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
     }
 ]

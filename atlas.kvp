@@ -24,12 +24,13 @@ App.ExecutableLinux=1006030/ShooterGame/Binaries/Linux/ShooterGameServer
 App.WorkingDir=1006030
 App.WindowsCommandLineArgs=-servergamelog
 App.LinuxCommandLineArgs=
-App.CommandLineArgs=Ocean?ServerX={{ServerX}}?ServerY={{ServerY}}?Port={{$GamePort}}?QueryPort={{$QueryPort}}?RCONPort={{$RCONPort}}?SessionName="{{ServerName}}" -log -server -useallavailablecores -NoBattlEye {{$PlatformArgs}} {{$FormattedArgs}}
+App.CommandLineArgs=Ocean?ServerX={{ServerX}}?ServerY={{ServerY}}?Port={{$GamePort}}?QueryPort={{$QueryPort}}?RCONPort={{$RCONPort}}?RCONEnabled=True?ServerAdminPassword={{AdminPassword}}?SessionName="{{ServerName}}" -log -server -useallavailablecores -NoBattlEye {{$PlatformArgs}} {{$FormattedArgs}}
 App.ExitMethod=String
 App.ExitTimeout=120
 App.ExitString=DoExit
 App.HasWriteableConsole=True
 App.HasReadableConsole=True
+App.TailLogFilePath=ShooterGame/Saved/Logs/ShooterGame.log
 App.Ports=@IncludeJson[atlasports.json]
 App.AdminPortRef=RCONPort
 App.PrimaryApplicationPortRef=GamePort
@@ -43,7 +44,7 @@ App.SteamAppId=1006030
 App.SteamUpdateAnonymousLogin=True
 App.EnvironmentVariables={"SteamAppId":"834910"}
 App.ApplicationReadyMode=RegexMatch
-Console.AppReadyRegex=^.*Successfully registered with Master Server.*$
+Console.AppReadyRegex=^.*has successfully started!.*$
 Console.UserJoinRegex=^.*Join succeeded: (?<username>.+)$
 Console.UserLeaveRegex=^.*Unloading Player: (?<username>.+)$
 Limits.SleepMode=True

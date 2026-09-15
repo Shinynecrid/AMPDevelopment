@@ -1,0 +1,40 @@
+{
+  "DatabaseConnections": [
+    {
+      "Name": "Default",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
+    },
+    {
+      "Name": "TribeDB",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
+    },
+    {
+      "Name": "TravelDataDB",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
+    },
+    {
+      "Name": "TerritoryDB",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
+    },
+    {
+      "Name": "LogDB",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
+    },
+    {
+      "Name": "TradeDB",
+      "URL": "{{RedisHost}}",
+      "Port": {{RedisPort}},
+      "Password": "{{RedisPassword}}"
+    }
+  ]
+}
