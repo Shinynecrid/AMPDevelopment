@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 6379,
+        "Ref": "ApplicationPort",
+        "Name": "Redis Port",
+        "Description": "Primary TCP port for Redis database client connections."
+    }
+]
