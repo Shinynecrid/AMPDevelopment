@@ -1,0 +1,24 @@
+[
+    {
+        "ConfigFile": "ShooterGame/Saved/Config/{{@Platform}}Server/GameUserSettings.ini",
+        "AutoMap": false,
+        "ConfigType": "ini",
+        "Nodes": [
+            {
+                "Section": "/Script/Engine.GameSession",
+                "Tag": "MaxPlayers",
+                "SettingName": "$MaxUsers"
+            },
+            {
+                "Section": "ServerSettings",
+                "Tag": "ServerPassword",
+                "SettingName": "ServerPassword"
+            },
+            {
+                "Section": "ServerSettings",
+                "Tag": "ServerAdminPassword",
+                "SettingName": "AdminPassword"
+            }
+        ]
+    }
+]
