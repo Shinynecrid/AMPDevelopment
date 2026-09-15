@@ -1,0 +1,20 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Download (Linux)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1006030",
+        "UpdateSourceTarget": "1006030",
+        "UpdateSourceVersion": "public",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download (Windows)",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1006030",
+        "UpdateSourceTarget": "1006030",
+        "UpdateSourceVersion": "public",
+        "SkipOnFailure": false
+    }
+]
