@@ -24,7 +24,7 @@ App.ExecutableLinux=1006030/ShooterGame/Binaries/Linux/ShooterGameServer
 App.WorkingDir=1006030
 App.WindowsCommandLineArgs=-servergamelog
 App.LinuxCommandLineArgs=
-App.CommandLineArgs=Ocean?ServerX={{ServerX}}?ServerY={{ServerY}}?Port={{$GamePort}}?QueryPort={{$QueryPort}}?RCONPort={{$RCONPort}}?RCONEnabled=True?RCONServerGameLogBuffer=600?ServerAdminPassword={{$RemoteAdminPassword}}?SessionName="{{ServerName}}" -log -server -useallavailablecores -NoBattlEye {{$PlatformArgs}} {{$FormattedArgs}}
+App.CommandLineArgs=Ocean?ServerX={{ServerX}}?ServerY={{ServerY}}?Port={{$GamePort}}?QueryPort={{$QueryPort}}?RCONPort={{$RCONPort}}?RCONEnabled=True?RCONServerGameLogBuffer=600?ServerAdminPassword={{$RemoteAdminPassword}}?SessionName="{{ServerName}}"{{CustomOptions}} -log -server -useallavailablecores {{BattlEye}}{{EnableIdlePlayerKick}}{{ForceAllowCaveFlyers}}{{passivemods}}{{mods}}{{$PlatformArgs}} {{$FormattedArgs}} {{CustomFlags}}
 App.ExitMethod=String
 App.ExitTimeout=120
 App.ExitString=DoExit

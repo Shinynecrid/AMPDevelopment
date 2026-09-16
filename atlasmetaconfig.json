@@ -2,11 +2,13 @@
     {
         "ConfigFile": "ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini",
         "AutoMap": true,
+        "Importable": true,
         "ConfigType": "ini"
     },
     {
         "ConfigFile": "ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini",
         "AutoMap": true,
+        "Importable": true,
         "ConfigType": "ini"
     },
     {
