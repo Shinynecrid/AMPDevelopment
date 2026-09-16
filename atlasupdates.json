@@ -25,5 +25,29 @@
         "UpdateSourceArgs": "{{$FullBaseDir}}ShooterGame/AMP_ServerGrid.ServerOnly.json",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install 2x2 ServerGrid Preset",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Shinynecrid/AMPDevelopment/main/presets/ServerGrid_2x2.json",
+        "UpdateSourceTarget": "{{$FullBaseDir}}ShooterGame",
+        "UpdateSourceArgs": "ServerGrid.json",
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "ServerGridPreset",
+        "UpdateSourceConditionValue": "2x2",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install 4x4 ServerGrid Preset",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Shinynecrid/AMPDevelopment/main/presets/ServerGrid_4x4.json",
+        "UpdateSourceTarget": "{{$FullBaseDir}}ShooterGame",
+        "UpdateSourceArgs": "ServerGrid.json",
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "ServerGridPreset",
+        "UpdateSourceConditionValue": "4x4",
+        "SkipOnFailure": false
     }
 ]

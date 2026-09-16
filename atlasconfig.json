@@ -471,6 +471,23 @@
         }
     },
     {
+        "DisplayName": "Server Grid Map Preset",
+        "Category": "ATLAS:sailing",
+        "Subcategory": "Grid & Database:storage:3",
+        "Description": "Select a preconfigured ServerGrid layout or choose Custom to manage ServerGrid.json manually.",
+        "Keywords": "map,grid,preset,servergrid,layout",
+        "FieldName": "ServerGridPreset",
+        "InputType": "enum",
+        "ParamFieldName": "ServerGridPreset",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "2x2",
+        "EnumValues": {
+            "2x2": "2x2 Test Grid (4 Cells - ATLAS Test)",
+            "4x4": "4x4 Ocean World (16 Cells - AtlasWorld)",
+            "Custom": "Custom (Do not overwrite ServerGrid.json)"
+        }
+    },
+    {
         "DisplayName": "Grid Cell X Coordinate",
         "Category": "ATLAS:sailing",
         "Subcategory": "Grid & Database:storage:3",
