@@ -1,8 +1,0 @@
-[
-    {
-        "ConfigFile": "redis.conf",
-        "AutoMap": true,
-        "ConfigType": "template",
-        "ConfigFileTemplate": "redis/AMP_redis.conf"
-    }
-]
