@@ -6,7 +6,8 @@
         "FieldName": "hostname",
         "InputType": "text",
         "ParamFieldName": "hostname",
-        "DefaultValue": "AMP Powered Contagion Server"
+        "DefaultValue": "AMP Powered Contagion Server",
+        "Tooltip": "The name displayed in the server browser."
     },
     {
         "DisplayName": "Initial Map",
@@ -16,13 +17,24 @@
         "InputType": "enum",
         "ParamFieldName": "map",
         "DefaultValue": "ce_barlowesquare",
+        "Tooltip": "The map loaded when the server starts. Prefix indicates game mode: ce=Escape, cx=Extraction, ch=Hunted, cpc/cpo=Panic.",
         "EnumValues": {
-            "ce_barlowesquare": "Barlowe Square (Escape)",
-            "ce_biotec": "Biotec (Escape)",
-            "ce_harvest": "Harvest (Escape)",
-            "ce_roanokepd": "Roanoke PD (Escape)",
-            "cx_hospital": "Hospital (Extraction)",
-            "cf_stonecreek": "Stone Creek (Flatline)"
+            "ce_barlowesquare": "[Escape] Barlowe Square",
+            "ce_roanokepd": "[Escape] Roanoke PD",
+            "ce_biotec": "[Escape] Biotec",
+            "ce_stonecreek": "[Escape] Stone Creek",
+            "ce_losmuertos": "[Escape] Los Muertos",
+            "cx_auroraestates": "[Extraction] Aurora Estates",
+            "cx_barlowesquare": "[Extraction] Barlowe Square",
+            "ch_auroraestates": "[Hunted] Aurora Estates",
+            "ch_barlowesquare": "[Hunted] Barlowe Square",
+            "ch_biotec": "[Hunted] Biotec",
+            "ch_cypruspark": "[Hunted] Cyprus Park",
+            "ch_pioneerexpress": "[Hunted] Pioneer Express",
+            "cpc_barlowesquare": "[Panic] Barlowe Square (Classic)",
+            "cpc_pioneerexpress": "[Panic] Pioneer Express (Classic)",
+            "cpc_cypruspark": "[Panic] Cyprus Park (Classic)",
+            "cpo_roanokepd": "[Panic] Roanoke PD (Objective)"
         }
     },
     {
@@ -32,9 +44,10 @@
         "FieldName": "$MaxUsers",
         "InputType": "number",
         "MinValue": "1",
-        "MaxValue": "32",
+        "MaxValue": "16",
         "ParamFieldName": "maxplayers",
-        "DefaultValue": "8"
+        "DefaultValue": "8",
+        "Tooltip": "Maximum concurrent players. Escape/Extraction modes support up to 8. Hunted/Panic modes support up to 16."
     },
     {
         "DisplayName": "Server Password",
@@ -43,16 +56,18 @@
         "FieldName": "sv_password",
         "InputType": "password",
         "ParamFieldName": "sv_password",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "Tooltip": "Leave blank for a public server. Set a password to restrict access."
     },
     {
         "DisplayName": "RCON Password",
         "Category": "Contagion:stadia_controller",
         "Subcategory": "Security:lock:2",
         "FieldName": "$RemoteAdminPassword",
-        "InputType": "text",
+        "InputType": "password",
         "Hidden": true,
         "ParamFieldName": "rcon_password",
-        "DefaultValue": ""
+        "DefaultValue": "",
+        "Tooltip": "Managed automatically by AMP. Used for remote console access."
     }
 ]
