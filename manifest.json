@@ -9,24 +9,7 @@
       "KVPPath": "contagion.kvp",
       "ConfigManifestPath": "contagionconfig.json",
       "MetaConfigManifestPath": "contagionmetaconfig.json"
-    },
-    {
-      "Name": "Redis Database",
-      "Description": "In-memory data structure store used as a database, cache, and message broker.",
-      "AppConfigId": "c4d2e1b8-7a5e-4f12-9c3b-d5e6f7a8b9c0",
-      "Category": "Database",
-      "KVPPath": "redis.kvp",
-      "ConfigManifestPath": "redisconfig.json",
-      "MetaConfigManifestPath": "redismetaconfig.json"
-    },
-    {
-      "Name": "ATLAS",
-      "Description": "A massively multiplayer first-and-third-person fantasy pirate adventure.",
-      "AppConfigId": "f8c5b9e0-0c4d-4a7b-9e8c-a1d2e3f4a5b6",
-      "Category": "Generic",
-      "KVPPath": "atlas.kvp",
-      "ConfigManifestPath": "atlasconfig.json",
-      "MetaConfigManifestPath": "atlasmetaconfig.json"
     }
   ]
 }
+
