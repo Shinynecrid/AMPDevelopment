@@ -1,4 +1,4 @@
-﻿# ATLAS — Prerequisites
+# ATLAS — Prerequisites
 
 > **Audience:** Shinynecrid community administrators only.
 > This module is privately maintained and not intended for public deployment.
@@ -52,9 +52,68 @@ libssl.so.1.0.0 (libc6,x86-64) => /usr/lib64/libssl.so.1.0.0
 
 ---
 
-## Podman / Container Note
+## Deployment Recommendation — Host OS (Non-Containerized)
 
-Libraries installed on the host may not be visible inside the AMP Podman
-container. If ATLAS still fails to find `libssl.so.1.0.0` after installing
-on the host, contact your hosting provider to have it included in the
-container image or bind-mounted into the instance.
+> [!IMPORTANT]
+> **ATLAS must be run on the host OS directly. Podman / containerized AMP deployments are not supported.**
+
+Because `ShooterGameServer` requires the legacy `libssl.so.1.0.0` library,
+and AMP's Podman container image does not include it, the server will fail
+to start in a containerized environment.
+
+When installing AMP, select the **non-containerized** (host OS) deployment
+option. This ensures that system libraries installed via `dnf` or `rpm` are
+immediately visible to the ATLAS process without any additional configuration.
+
+### Why not Podman?
+
+- The `compat-openssl10` library installed on the host is **not automatically
+  visible** inside the Podman container AMP uses for isolation.
+- Bind-mounting the library into the container requires custom hosting
+  configuration that is outside the scope of this module.
+- ATLAS's multi-grid architecture (multiple server processes + Redis) is
+  simpler to manage without an additional container networking layer.
+
+If your hosting provider only offers containerized AMP, ATLAS is not
+compatible with that environment.
+
+---
+
+## Security Hardening
+
+> [!WARNING]
+> `compat-openssl10` installs a library that reached **end-of-life on December 31, 2019**
+> and will never receive security patches. Take the precautions below before exposing
+> this server to the internet.
+
+### OpenSSL 1.0.x Risk Scope
+
+The legacy library only affects processes that explicitly link against it — specifically
+`ShooterGameServer`. Modern system tools and other game servers compiled against
+OpenSSL 1.1 or 3.x are **not impacted**. The exposure only exists while the ATLAS
+process is actively running.
+
+### RCON — Firewall Required
+
+RCON uses the legacy SSL stack and must never be exposed to the public internet.
+
+Restrict the RCON port to trusted admin IPs only:
+
+```bash
+# Replace <RCON_PORT> and <TRUSTED_IP> with your values
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="<TRUSTED_IP>" port port="<RCON_PORT>" protocol="tcp" accept'
+sudo firewall-cmd --reload
+```
+
+### Run Under a Dedicated Unprivileged User
+
+Do not run `ShooterGameServer` as `root` or as the AMP service account. Create a
+dedicated system user with no login shell and no sudo access:
+
+```bash
+sudo useradd -r -s /sbin/nologin atlasserver
+```
+
+Configure AMP to run the ATLAS instance under this user. If a vulnerability in the
+legacy SSL library is exploited, blast radius is limited to the permissions of this
+account only.
