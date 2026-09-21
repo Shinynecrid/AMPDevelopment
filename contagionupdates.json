@@ -6,6 +6,7 @@
         "UpdateSourceData": "293030",
         "UpdateSourceTarget": "293030",
         "UpdateSourceVersion": "public",
+        "ForceDownloadPlatform": "Windows",
         "SkipOnFailure": false
     },
     {
@@ -15,6 +16,14 @@
         "UpdateSourceData": "// Contagion Server Config\nhostname \"{{hostname}}\"\nsv_password \"{{sv_password}}\"\nrcon_password \"{{$RemoteAdminPassword}}\"\nwriteip\nwriteid\n",
         "UpdateSourceArgs": "{{$FullRootDir}}AMP_server.cfg",
         "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Initialise Wine",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"rm -rf \\\"{{$FullRootDir}}.wine\\\" >/dev/null 2>&1; WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all /usr/bin/wineboot --init\"",
         "SkipOnFailure": false
     }
 ]
