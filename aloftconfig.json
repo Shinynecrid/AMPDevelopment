@@ -1,0 +1,131 @@
+[
+    {
+        "DisplayName": "Game Port",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Port used for game traffic.",
+        "FieldName": "$GamePort",
+        "InputType": "number",
+        "Hidden": true,
+        "ParamFieldName": "$GamePort",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Name",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "The name shown in the in-game server browser. No spaces.",
+        "FieldName": "SERVERNAME",
+        "InputType": "text",
+        "ParamFieldName": "SERVERNAME",
+        "DefaultValue": "AMP-Powered-Aloft-Server",
+        "Placeholder": "AMP-Powered-Aloft-Server",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Player Limit",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Maximum number of players that can connect at once.",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "50",
+        "ParamFieldName": "$MaxUsers",
+        "DefaultValue": "8",
+        "Suffix": "players",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Visibility",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Whether the server appears in the public server browser.",
+        "FieldName": "VISIBLE",
+        "InputType": "checkbox",
+        "ParamFieldName": "VISIBLE",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "false": "False",
+            "true": "True"
+        }
+    },
+    {
+        "DisplayName": "Protect Home Islands",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If enabled, players' home island spawns are protected from other players.",
+        "FieldName": "PRIVATE",
+        "InputType": "checkbox",
+        "ParamFieldName": "PRIVATE",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "false": "False",
+            "true": "True"
+        }
+    },
+    {
+        "DisplayName": "Admin Steam IDs",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Security:lock:2",
+        "Description": "Steam64 IDs to grant in-game admin privileges, comma-separated. Leave blank for none.",
+        "FieldName": "ADMIN",
+        "InputType": "text",
+        "ParamFieldName": "ADMIN",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "World Command",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "World:crosshair:3",
+        "Description": "Whether to create a brand-new world or load the existing one. Must be set to \"create\" once to generate the world, then switched to \"load\" and the instance restarted — the server does not run persistently in create mode.",
+        "FieldName": "WORLDCMD",
+        "InputType": "enum",
+        "ParamFieldName": "WORLDCMD",
+        "DefaultValue": "create",
+        "EnumValues": {
+            "create": "Create new world",
+            "load": "Load existing world"
+        }
+    },
+    {
+        "DisplayName": "Map Name",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "World:crosshair:3",
+        "Description": "The save/world name. No spaces.",
+        "FieldName": "MAPNAME",
+        "InputType": "text",
+        "ParamFieldName": "MAPNAME",
+        "DefaultValue": "AloftWorld",
+        "Placeholder": "AloftWorld",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Number of Islands",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "World:crosshair:3",
+        "Description": "Number of islands to generate. Only applies when creating a new world.",
+        "FieldName": "ISLANDS",
+        "InputType": "number",
+        "MinValue": "250",
+        "MaxValue": "500",
+        "ParamFieldName": "ISLANDS",
+        "DefaultValue": "250",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Game Mode",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "World:crosshair:3",
+        "Description": "Survival or Creative mode. Only applies when creating a new world.",
+        "FieldName": "CREATIVE",
+        "InputType": "enum",
+        "ParamFieldName": "CREATIVE",
+        "DefaultValue": "0",
+        "EnumValues": {
+            "0": "Survival",
+            "1": "Creative"
+        }
+    }
+]
