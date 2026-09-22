@@ -125,6 +125,102 @@
         "Hidden": true,
         "ParamFieldName": "rcon_password",
         "Tooltip": "Managed automatically by AMP. Used for remote console access."
+    },
+    {
+        "DisplayName": "Difficulty",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "difficulty",
+        "InputType": "enum",
+        "ParamFieldName": "difficulty",
+        "DefaultValue": "1",
+        "Tooltip": "Overall game difficulty. Affects zombie health, damage, accuracy, and infection rates.",
+        "EnumValues": {
+            "0": "Easy",
+            "1": "Normal",
+            "2": "Hard",
+            "3": "Extreme",
+            "4": "Nightmare"
+        }
+    },
+    {
+        "DisplayName": "Round Time Limit",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "mp_timelimit",
+        "InputType": "number",
+        "MinValue": "0",
+        "MaxValue": "120",
+        "ParamFieldName": "mp_timelimit",
+        "DefaultValue": "25",
+        "Suffix": "minutes",
+        "Tooltip": "Maximum time per round before it ends. 0 disables the time limit."
+    },
+    {
+        "DisplayName": "Round Limit",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "mp_roundlimit",
+        "InputType": "number",
+        "MinValue": "0",
+        "MaxValue": "50",
+        "ParamFieldName": "mp_roundlimit",
+        "DefaultValue": "8",
+        "Tooltip": "Number of rounds played before the map changes. 0 disables the round limit."
+    },
+    {
+        "DisplayName": "All-Talk Voice Chat",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "sv_alltalk",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_alltalk",
+        "DefaultValue": "0",
+        "Tooltip": "When enabled, all players can hear each other regardless of team or proximity.",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Allow Voting",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "sv_vote_allow",
+        "InputType": "checkbox",
+        "ParamFieldName": "sv_vote_allow",
+        "DefaultValue": "1",
+        "Tooltip": "Allow players to call votes (kick, map change, restart, difficulty change, etc.).",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
+    },
+    {
+        "DisplayName": "Max Zombies (Extraction Mode)",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "cx_max_zombies",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "200",
+        "ParamFieldName": "cx_max_zombies",
+        "DefaultValue": "45",
+        "Tooltip": "Maximum number of zombies alive at once in Extraction mode."
+    },
+    {
+        "DisplayName": "Better Starting Weapons (Panic Mode)",
+        "Category": "Contagion:stadia_controller",
+        "Subcategory": "Gameplay:crosshair:3",
+        "FieldName": "cp_betterstartingweapons",
+        "InputType": "checkbox",
+        "ParamFieldName": "cp_betterstartingweapons",
+        "DefaultValue": "1",
+        "Tooltip": "Gives survivors improved starting weapons in Panic mode.",
+        "EnumValues": {
+            "False": "0",
+            "True": "1"
+        }
     }
 ]
 
