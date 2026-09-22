@@ -9,6 +9,14 @@
       "KVPPath": "contagion.kvp",
       "ConfigManifestPath": "contagionconfig.json",
       "MetaConfigManifestPath": "contagionmetaconfig.json"
+    },
+    {
+      "Name": "Aloft",
+      "Description": "Cooperative sky-island survival sandbox.",
+      "AppConfigId": "e3f44ed7-86fc-401e-a3f8-d85f1389ccd5",
+      "Category": "Generic",
+      "KVPPath": "aloft.kvp",
+      "ConfigManifestPath": "aloftconfig.json"
     }
   ]
 }
