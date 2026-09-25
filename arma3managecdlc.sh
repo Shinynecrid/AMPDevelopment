@@ -13,7 +13,11 @@ BASEDIR="$4"
 
 STEAMCMD="${ROOTDIR}steamcmd.sh"
 APPINFO="${ROOTDIR}appinfo_${APPID}.txt"
+# On Linux, SteamCMD's actual binary runs from a linux32/ subfolder, and
+# download_depot's default destination is relative to that working directory,
+# not the top-level RootDir (unlike steamcmd.exe on Windows).
 DOWNLOADDIR="${ROOTDIR}steamapps/content/app_${APPID}/depot_${DEPOTID}"
+DOWNLOADDIR_LINUX32="${ROOTDIR}linux32/steamapps/content/app_${APPID}/depot_${DEPOTID}"
 
 "$STEAMCMD" +login anonymous +app_info_print $APPID +quit > "$APPINFO" 2>&1
 
@@ -51,8 +55,10 @@ echo "Resolved depot $DEPOTID ($CODENAME) to manifest $GID on branch $BRANCH"
 
 "$STEAMCMD" +login anonymous +download_depot $APPID $DEPOTID $GID +quit
 
-if [ ! -d "$DOWNLOADDIR" ]; then
-    echo "ERROR: Depot download did not produce expected folder: $DOWNLOADDIR"
+if [ -d "$DOWNLOADDIR_LINUX32" ]; then
+    DOWNLOADDIR="$DOWNLOADDIR_LINUX32"
+elif [ ! -d "$DOWNLOADDIR" ]; then
+    echo "ERROR: Depot download did not produce expected folder: $DOWNLOADDIR or $DOWNLOADDIR_LINUX32"
     exit 1
 fi
 
