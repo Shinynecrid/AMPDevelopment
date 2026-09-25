@@ -171,7 +171,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233792 gm {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCGM",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Global Mobilization CDLC",
@@ -181,7 +181,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233792 -Codename gm -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCGM",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install S.O.G. Prairie Fire CDLC",
@@ -191,7 +191,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233794 vn {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCVN",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install S.O.G. Prairie Fire CDLC",
@@ -201,7 +201,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233794 -Codename vn -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCVN",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install CSLA Iron Curtain CDLC",
@@ -211,7 +211,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233793 csla {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCCSLA",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install CSLA Iron Curtain CDLC",
@@ -221,7 +221,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233793 -Codename csla -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCCSLA",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Western Sahara CDLC",
@@ -231,7 +231,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233795 ws {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCWS",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Western Sahara CDLC",
@@ -241,7 +241,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233795 -Codename ws -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCWS",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Spearhead 1944 CDLC",
@@ -251,7 +251,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233788 spe {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCSPE",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Spearhead 1944 CDLC",
@@ -261,7 +261,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233788 -Codename spe -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCSPE",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Reaction Forces CDLC",
@@ -271,7 +271,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233799 rf {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCRF",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Reaction Forces CDLC",
@@ -281,7 +281,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233799 -Codename rf -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCRF",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Expeditionary Forces CDLC",
@@ -291,7 +291,7 @@
         "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233798 ef {{$FullRootDir}} {{$FullBaseDir}}",
         "UpdateSourceConditionSetting": "InstallCDLCEF",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Install Expeditionary Forces CDLC",
@@ -301,7 +301,7 @@
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233798 -Codename ef -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
         "UpdateSourceConditionSetting": "InstallCDLCEF",
         "UpdateSourceConditionValue": "true",
-        "SkipOnFailure": false
+        "SkipOnFailure": true
     },
     {
         "UpdateStageName": "Server Config Template Download",
