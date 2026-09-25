@@ -1,0 +1,375 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "public",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "public",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "profiling",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "profiling",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "creatordlc",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "creatordlc",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "contact",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "contact",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Creator DLC Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "creatordlc",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "creatordlc-profiling",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Performance Profiling Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceTarget": ".profiling",
+        "UpdateSourceVersion": "profiling",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "creatordlc-profiling",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "legacy",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "legacy",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "legacycontact",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "legacycontact",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "legacyports",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "legacyports",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "rc",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "rc",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "233780",
+        "UpdateSourceArgs": "107410",
+        "UpdateSourceVersion": "creatordlcrc",
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "creatordlcrc",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Performance Profiling Binary Copy",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}arma3server_x64",
+        "UpdateSourceArgs": "{{$FullRootDir}}.profiling/arma3server_x64",
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "creatordlc-profiling",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Performance Profiling Binary Copy",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}ArmA3Server_x64.exe",
+        "UpdateSourceArgs": "{{$FullRootDir}}.profiling/ArmA3Server_x64.exe",
+        "OverwriteExistingFiles": true,
+        "UpdateSourceConditionSetting": "ServerBranch",
+        "UpdateSourceConditionValue": "creatordlc-profiling",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "CDLC Manager Script Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma3managecdlc.sh",
+        "UpdateSourceArgs": "managecdlc.sh",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "CDLC Manager Script Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma3managecdlc.ps1",
+        "UpdateSourceArgs": "managecdlc.ps1",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Global Mobilization CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233792 gm {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCGM",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Global Mobilization CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233792 -Codename gm -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCGM",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install S.O.G. Prairie Fire CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233794 vn {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCVN",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install S.O.G. Prairie Fire CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233794 -Codename vn -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCVN",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install CSLA Iron Curtain CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233793 csla {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCCSLA",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install CSLA Iron Curtain CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233793 -Codename csla -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCCSLA",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Western Sahara CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233795 ws {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCWS",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Western Sahara CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233795 -Codename ws -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCWS",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Spearhead 1944 CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233788 spe {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCSPE",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Spearhead 1944 CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233788 -Codename spe -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCSPE",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Reaction Forces CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233799 rf {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCRF",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Reaction Forces CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233799 -Codename rf -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCRF",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Expeditionary Forces CDLC",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "{{$FullRootDir}}managecdlc.sh 233798 ef {{$FullRootDir}} {{$FullBaseDir}}",
+        "UpdateSourceConditionSetting": "InstallCDLCEF",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Expeditionary Forces CDLC",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"{{$FullRootDir}}managecdlc.ps1\" -DepotId 233798 -Codename ef -RootDir \"{{$FullRootDir}}\\\" -BaseDir \"{{$FullBaseDir}}\\\"",
+        "UpdateSourceConditionSetting": "InstallCDLCEF",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Config Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma3server.cfg",
+        "UpdateSourceArgs": "AMP_server.cfg",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Basic Config File Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma3basic.cfg",
+        "UpdateSourceArgs": "basic.cfg",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": false
+    },
+    {
+        "UpdateStageName": "Create Server Parameters File",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceArgs": "{{$FullBaseDir}}parameters.txt",
+        "OverwriteExistingFiles": false
+    },
+    {
+        "UpdateStageName": "Create Headless Client Parameters File",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceArgs": "{{$FullBaseDir}}hc_parameters.txt",
+        "OverwriteExistingFiles": false
+    },
+    {
+        "UpdateStageName": "Modscript Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma3managemods.sh",
+        "UpdateSourceArgs": "managemods.sh",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Manage Mods",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "./managemods.sh {{ModDirFormat}}",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Modscript Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://cdn-repo.c7rs.com/AMPTemplates/arma3managemods.ps1",
+        "UpdateSourceArgs": "managemods.ps1",
+        "UpdateSourceTarget": "{{$FullInstanceDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Manage Mods",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -File \"managemods.ps1\" \"{{ModDirFormat}}\"",
+        "SkipOnFailure": true
+    }
+]
