@@ -63,5 +63,6 @@ if (-not (Test-Path $DownloadDir)) {
 
 Copy-Item -Path (Join-Path $DownloadDir '*') -Destination $BaseDir -Recurse -Force
 Remove-Item -Path $DownloadDir -Recurse -Force
+Remove-Item -Path $AppInfo -Force -ErrorAction SilentlyContinue
 
 Write-Host "Installed Creator DLC '$Codename' (depot $DepotId) into $BaseDir"
