@@ -64,5 +64,6 @@ fi
 
 cp -rf "$DOWNLOADDIR"/* "$BASEDIR"
 rm -rf "$DOWNLOADDIR"
+rm -f "$APPINFO"
 
 echo "Installed Creator DLC '$CODENAME' (depot $DEPOTID) into $BASEDIR"
