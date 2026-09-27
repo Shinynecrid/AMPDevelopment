@@ -10,15 +10,6 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Create Config Template",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "CreateFile",
-        "UpdateSourceData": "// Contagion Server Config\nhostname \"{{hostname}}\"\nsv_password \"{{sv_password}}\"\nrcon_password \"{{$RemoteAdminPassword}}\"\nwriteip\nwriteid\n",
-        "UpdateSourceArgs": "{{$FullRootDir}}AMP_server.cfg",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
-    },
-    {
         "UpdateStageName": "Initialise Wine",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
