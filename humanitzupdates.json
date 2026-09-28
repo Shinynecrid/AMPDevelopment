@@ -6,19 +6,6 @@
         "UpdateSourceData": "2728330",
         "UpdateSourceArgs": "1766060",
         "UpdateSourceVersion": "public",
-        "UpdateSourceConditionSetting": "ServerBranch",
-        "UpdateSourceConditionValue": "public",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "SteamCMD Download (Experimental)",
-        "UpdateSourcePlatform": "Windows",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "2728330",
-        "UpdateSourceArgs": "1766060",
-        "UpdateSourceVersion": "experimental",
-        "UpdateSourceConditionSetting": "ServerBranch",
-        "UpdateSourceConditionValue": "experimental",
         "SkipOnFailure": false
     },
     {
@@ -36,19 +23,6 @@
         "UpdateSourceData": "2728330",
         "UpdateSourceArgs": "1766060",
         "UpdateSourceVersion": "linuxbranch",
-        "UpdateSourceConditionSetting": "ServerBranch",
-        "UpdateSourceConditionValue": "public",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "SteamCMD Download (Experimental)",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "2728330",
-        "UpdateSourceArgs": "1766060",
-        "UpdateSourceVersion": "experimental",
-        "UpdateSourceConditionSetting": "ServerBranch",
-        "UpdateSourceConditionValue": "experimental",
         "SkipOnFailure": false
     },
     {
