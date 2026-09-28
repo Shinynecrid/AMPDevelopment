@@ -299,24 +299,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Loot Rarity",
-        "Category": "HumanitZ:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Sets the rarity of items to be spawned",
-        "Keywords": "loot,rarity,items,spawn,lootrarity",
-        "FieldName": "LootRarity",
-        "InputType": "enum",
-        "ParamFieldName": "World Settings.LootRarity",
-        "DefaultValue": "2",
-        "EnumValues": {
-            "0": "Scarce",
-            "1": "Low",
-            "2": "Default",
-            "3": "Plentiful",
-            "4": "Abundant"
-        }
-    },
-    {
         "DisplayName": "Air Drop Interval",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -379,25 +361,6 @@
         "FieldName": "ZombieDiffDamage",
         "InputType": "enum",
         "ParamFieldName": "World Settings.ZombieDiffDamage",
-        "DefaultValue": "3",
-        "EnumValues": {
-            "0": "Very Easy",
-            "1": "Easy",
-            "2": "Default",
-            "3": "Hard",
-            "4": "Very Hard",
-            "5": "Nightmare"
-        }
-    },
-    {
-        "DisplayName": "Hostile Human Difficulty",
-        "Category": "HumanitZ:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "Sets the difficulty level for hostile human AI",
-        "Keywords": "hostile,human,difficulty,ai,HumanDifficulty",
-        "FieldName": "HumanDifficulty",
-        "InputType": "enum",
-        "ParamFieldName": "World Settings.HumanDifficulty",
         "DefaultValue": "3",
         "EnumValues": {
             "0": "Very Easy",
@@ -641,22 +604,6 @@
         "DefaultValue": "1",
         "Placeholder": "1",
         "EnumValues": {}
-    },
-    {
-        "DisplayName": "Server Branch",
-        "Category": "HumanitZ:stadia_controller",
-        "Subcategory": "Steam Updates:download:2",
-        "Description": "Sets which Steam branch to install. Experimental is the developers' work-in-progress branch and may be less stable or save-incompatible with Public. NOTE: Update the server after switching branches",
-        "Keywords": "branch,steam,experimental,beta,serverbranch",
-        "FieldName": "ServerBranch",
-        "InputType": "enum",
-        "IsFlagArgument": false,
-        "IncludeInCommandLine": false,
-        "DefaultValue": "public",
-        "EnumValues": {
-            "public": "Public (default)",
-            "experimental": "Experimental [WIP]"
-        }
     },
     {
         "DisplayName": "Search ID",
