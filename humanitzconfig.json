@@ -101,21 +101,6 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Enable Whitelist",
-        "Category": "HumanitZ:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If enabled, only whitelisted players will be allowed to join the server. May not work",
-        "Keywords": "whitelist,onlyallowedplayers",
-        "FieldName": "OnlyAllowedPlayers",
-        "InputType": "checkbox",
-        "ParamFieldName": "Host Settings.OnlyAllowedPlayers",
-        "DefaultValue": "0",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
         "DisplayName": "Autosave Interval",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -138,11 +123,11 @@
         "Keywords": "disable,death,notification,chat,feedback,NoDeathFeedback",
         "FieldName": "NoDeathFeedback",
         "InputType": "checkbox",
-        "ParamFieldName": "World Settings.NoDeathFeedback",
-        "DefaultValue": "0",
+        "ParamFieldName": "Host Settings.NoDeathFeedback",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -187,36 +172,6 @@
         "FieldName": "PVP",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.PVP",
-        "DefaultValue": "1",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Clear Infection On Death",
-        "Category": "HumanitZ:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If enabled, a player's infection will be cleared when the player dies and respawns",
-        "Keywords": "clear,infection,death,respawn,clearinfection",
-        "FieldName": "ClearInfection",
-        "InputType": "checkbox",
-        "ParamFieldName": "World Settings.ClearInfection",
-        "DefaultValue": "1",
-        "EnumValues": {
-            "False": "0",
-            "True": "1"
-        }
-    },
-    {
-        "DisplayName": "Enable Eagle Eye Purchase",
-        "Category": "HumanitZ:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "If enabled, players can purchase the eagle eye skill, which shows the location of other players on the map screen",
-        "Keywords": "enable,eagle,eye,skill,location,players,map,eagleeye",
-        "FieldName": "EagleEye",
-        "InputType": "checkbox",
-        "ParamFieldName": "World Settings.EagleEye",
         "DefaultValue": "1",
         "EnumValues": {
             "False": "0",
@@ -641,10 +596,10 @@
         "FieldName": "NoJoinFeedback",
         "InputType": "checkbox",
         "ParamFieldName": "Host Settings.NoJoinFeedback",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -656,10 +611,25 @@
         "FieldName": "UseGlobalBanList",
         "InputType": "checkbox",
         "ParamFieldName": "Host Settings.UseGlobalBanList",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Allow Family Sharing",
+        "Category": "HumanitZ:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If disabled, players using Steam Family Sharing will not be able to join the server",
+        "Keywords": "family,sharing,steam,allowfamilysharing",
+        "FieldName": "AllowFamilySharing",
+        "InputType": "checkbox",
+        "ParamFieldName": "Host Settings.AllowFamilySharing",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -671,10 +641,10 @@
         "FieldName": "RecruitDog",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.RecruitDog",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -686,10 +656,10 @@
         "FieldName": "LimitedSpawns",
         "InputType": "checkbox",
         "ParamFieldName": "Host Settings.LimitedSpawns",
-        "DefaultValue": "0",
+        "DefaultValue": "false",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -745,10 +715,10 @@
         "FieldName": "Sleep",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.Sleep",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -760,10 +730,10 @@
         "FieldName": "FreezeTime",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.FreezeTime",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -775,10 +745,10 @@
         "FieldName": "Voip",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.Voip",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -799,7 +769,7 @@
         "DisplayName": "Far Object Spawn Segment",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "World:public:3",
-        "Description": "Sets the grid segment distance controlling spawning of far-away objects. NOTE: the exact key name for this setting has changed between game versions (Seg0 vs MapSeg0) - verify against this instance's REF_GameServerSettings.ini if it does not appear to take effect",
+        "Description": "Sets the grid segment size controlling spawning of far-away objects (e.g. houses). The map is divided into a grid of this size",
         "Keywords": "map,segment,spawn,distance,seg0,mapseg0",
         "FieldName": "MapSeg0",
         "InputType": "number",
@@ -813,7 +783,7 @@
         "DisplayName": "Medium Object Spawn Segment",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "World:public:3",
-        "Description": "Sets the grid segment distance controlling spawning of medium-distance objects. NOTE: the exact key name for this setting has changed between game versions (Seg1 vs MapSeg1) - verify against this instance's REF_GameServerSettings.ini if it does not appear to take effect",
+        "Description": "Sets the grid segment size controlling spawning of medium-distance objects (e.g. broken cars)",
         "Keywords": "map,segment,spawn,distance,seg1,mapseg1",
         "FieldName": "MapSeg1",
         "InputType": "number",
@@ -827,7 +797,7 @@
         "DisplayName": "Near Object Spawn Segment",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "World:public:3",
-        "Description": "Sets the grid segment distance controlling spawning of nearby objects. NOTE: the exact key name for this setting has changed between game versions (Seg2 vs MapSeg2) - verify against this instance's REF_GameServerSettings.ini if it does not appear to take effect",
+        "Description": "Sets the grid segment size controlling spawning of nearby objects",
         "Keywords": "map,segment,spawn,distance,seg2,mapseg2",
         "FieldName": "MapSeg2",
         "InputType": "number",
@@ -1167,10 +1137,10 @@
         "FieldName": "AllowDismantle",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.AllowDismantle",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -1182,10 +1152,10 @@
         "FieldName": "AllowHouseDismantle",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.AllowHouseDismantle",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -1197,40 +1167,40 @@
         "FieldName": "Territory",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.Territory",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
         "DisplayName": "Enable Free Build",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "Building:build:6",
-        "Description": "If enabled, some buildables no longer require a foundation. Experimental feature on newer game versions - may not exist on older server builds",
+        "Description": "If enabled (default), some buildables no longer require a foundation, reducing floating buildings. Experimental - disable if you encounter issues",
         "Keywords": "free,build,foundation,freebuild,experimental",
         "FieldName": "FreeBuild",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.FreeBuild",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
         "DisplayName": "Enable No-Build Zones",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "Building:build:6",
-        "Description": "If enabled, designated no-build zones are enforced. May not exist on older server builds",
+        "Description": "If enabled, designated no-build zones are enforced",
         "Keywords": "no,build,zone,restrict,nobuildzone",
         "FieldName": "NoBuildZone",
         "InputType": "checkbox",
         "ParamFieldName": "World Settings.NoBuildZone",
-        "DefaultValue": "1",
+        "DefaultValue": "true",
         "EnumValues": {
-            "False": "0",
-            "True": "1"
+            "False": "false",
+            "True": "true"
         }
     },
     {
@@ -1252,7 +1222,7 @@
         "DisplayName": "Building Decay",
         "Category": "HumanitZ:stadia_controller",
         "Subcategory": "Building:build:6",
-        "Description": "Sets how many real-world days until unmaintained structures decay. 0 disables this. May not exist on older server builds",
+        "Description": "Sets how many real-world days until unmaintained structures decay. 0 disables this",
         "Keywords": "building,decay,structure,buildingdecay",
         "FieldName": "BuildingDecay",
         "InputType": "number",
