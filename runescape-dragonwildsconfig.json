@@ -7,7 +7,7 @@
         "Keywords": "owner,id,ownerid,playerid",
         "FieldName": "OwnerID",
         "InputType": "text",
-        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.OwnerId",
+        "ParamFieldName": "OwnerId",
         "DefaultValue": "",
         "Required": true,
         "EnumValues": {}
@@ -20,7 +20,7 @@
         "Keywords": "server,name,servername",
         "FieldName": "ServerName",
         "InputType": "text",
-        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.ServerName",
+        "ParamFieldName": "ServerName",
         "DefaultValue": "AMP Powered RuneScape: Dragonwilds Server",
         "Required": true,
         "EnumValues": {}
@@ -33,7 +33,7 @@
         "Keywords": "default,world,name,defaultworldname",
         "FieldName": "DefaultWorldName",
         "InputType": "text",
-        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.DefaultWorldName",
+        "ParamFieldName": "DefaultWorldName",
         "DefaultValue": "World-12345",
         "Placeholder": "World-12345",
         "Required": true,
@@ -47,7 +47,7 @@
         "Keywords": "admin,password,adminpassword",
         "FieldName": "AdminPassword",
         "InputType": "Password",
-        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.AdminPassword",
+        "ParamFieldName": "AdminPassword",
         "DefaultValue": "{{newguid()}}",
         "Required": true,
         "EnumValues": {}
@@ -60,7 +60,7 @@
         "Keywords": "world,password,worldpassword",
         "FieldName": "WorldPassword",
         "InputType": "Password",
-        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.WorldPassword",
+        "ParamFieldName": "WorldPassword",
         "DefaultValue": "",
         "EnumValues": {}
     }
