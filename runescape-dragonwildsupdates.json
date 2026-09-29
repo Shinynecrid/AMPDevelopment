@@ -1,0 +1,20 @@
+[
+    {
+        "UpdateStageName": "Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "4019830",
+        "UpdateSourceArgs": "1374490",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Dedicated Server Config Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Shinynecrid/AMPDevelopment/main/runescape-dragonwildsdedicatedserver.ini",
+        "UpdateSourceArgs": "AMP_DedicatedServer.ini",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": false,
+        "SkipOnFailure": false
+    }
+]
