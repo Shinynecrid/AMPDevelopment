@@ -47,21 +47,9 @@
         "Keywords": "admin,password,adminpassword",
         "FieldName": "AdminPassword",
         "InputType": "Password",
-        "ParamFieldName": "AdminPassword",
+        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.AdminPassword",
         "DefaultValue": "{{newguid()}}",
         "Required": true,
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Admin Password",
-        "Category": "RuneScape Dragonwilds:stadia_controller",
-        "Subcategory": "Server:dns:1",
-        "Description": "",
-        "Keywords": "",
-        "FieldName": "AdminPassword",
-        "InputType": "text",
-        "Hidden": true,
-        "ParamFieldName": "/Script/Dominion.DedicatedServerSettings.AdminPassword",
         "EnumValues": {}
     },
     {
