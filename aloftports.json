@@ -1,0 +1,19 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 15636,
+        "Ref": "GamePort",
+        "Name": "Game Port",
+        "Description": "Port for game traffic",
+        "ChildPorts": [
+            {
+                "Protocol": "UDP",
+                "Port": 15637,
+                "Offset": 1,
+                "Ref": "QueryPort",
+                "Name": "Steam Query Port",
+                "Description": "Port for Steam server browser query traffic"
+            }
+        ]
+    }
+]
