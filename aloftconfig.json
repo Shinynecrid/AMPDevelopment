@@ -1,0 +1,55 @@
+[
+    {
+        "DisplayName": "Map Name",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the name of the map/world to create or load. Avoid spaces",
+        "Keywords": "map,name,world,mapname",
+        "FieldName": "MapName",
+        "InputType": "text",
+        "DefaultValue": "AMPWorld",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Name",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the name of the server shown in the server browser. Avoid spaces",
+        "Keywords": "server,name,servername",
+        "FieldName": "ServerName",
+        "InputType": "text",
+        "DefaultValue": "AMPPoweredAloftServer",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Public Server",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If enabled, the server is listed publicly in the server browser. If disabled, players need a join code to connect",
+        "Keywords": "public,visible,isvisible",
+        "FieldName": "IsVisible",
+        "InputType": "checkbox",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Player Limit",
+        "Category": "Aloft:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the maximum number of players allowed on the server at one time",
+        "Keywords": "max,players,slots,limit,playercount",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "8",
+        "DefaultValue": "8",
+        "Placeholder": "8",
+        "Suffix": "players",
+        "EnumValues": {}
+    }
+]

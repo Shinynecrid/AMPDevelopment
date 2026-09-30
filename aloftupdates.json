@@ -1,0 +1,9 @@
+[
+    {
+        "UpdateStageName": "Server Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1660080",
+        "SkipOnFailure": false
+    }
+]
