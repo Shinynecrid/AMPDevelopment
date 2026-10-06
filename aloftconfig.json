@@ -3,7 +3,7 @@
         "DisplayName": "Map Name",
         "Category": "Aloft:stadia_controller",
         "Subcategory": "Server:dns:1",
-        "Description": "Sets the name of the map/world to create or load. Avoid spaces",
+        "Description": "Sets the name of the world to load. If no world with this name exists, a new one is created automatically on first start. Avoid spaces",
         "Keywords": "map,name,world,mapname",
         "FieldName": "MapName",
         "InputType": "text",
@@ -50,6 +50,96 @@
         "DefaultValue": "8",
         "Placeholder": "8",
         "Suffix": "players",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Island Count",
+        "Subcategory": "World:public:2",
+        "Description": "Sets the size of a newly created world. Only applies when the world is first created; changing it later has no effect on an existing world",
+        "Keywords": "island,count,world,size,islandcount",
+        "FieldName": "IslandCount",
+        "InputType": "enum",
+        "DefaultValue": "normal",
+        "EnumValues": {
+            "normal": "Normal",
+            "big": "Big",
+            "huge": "Huge"
+        },
+        "Category": "Aloft:stadia_controller"
+    },
+    {
+        "DisplayName": "Creative Mode",
+        "Subcategory": "World:public:2",
+        "Description": "If enabled, a newly created world uses Creative mode instead of Survival. Only applies when the world is first created",
+        "Keywords": "creative,mode,survival,world,creativemode",
+        "FieldName": "CreativeMode",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        },
+        "Category": "Aloft:stadia_controller"
+    },
+    {
+        "DisplayName": "Admin Steam ID 1",
+        "Subcategory": "Admins:admin_panel_settings:3",
+        "Description": "SteamID64 of a player to grant admin rights. Leave as -1 for none",
+        "Keywords": "admin,steam,id,steamid,administrator",
+        "FieldName": "AdminSteamID1",
+        "InputType": "text",
+        "DefaultValue": "-1",
+        "Placeholder": "-1",
+        "Category": "Aloft:stadia_controller",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Admin Steam ID 2",
+        "Subcategory": "Admins:admin_panel_settings:3",
+        "Description": "SteamID64 of a player to grant admin rights. Leave as -1 for none",
+        "Keywords": "admin,steam,id,steamid,administrator",
+        "FieldName": "AdminSteamID2",
+        "InputType": "text",
+        "DefaultValue": "-1",
+        "Placeholder": "-1",
+        "Category": "Aloft:stadia_controller",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Admin Steam ID 3",
+        "Subcategory": "Admins:admin_panel_settings:3",
+        "Description": "SteamID64 of a player to grant admin rights. Leave as -1 for none",
+        "Keywords": "admin,steam,id,steamid,administrator",
+        "FieldName": "AdminSteamID3",
+        "InputType": "text",
+        "DefaultValue": "-1",
+        "Placeholder": "-1",
+        "Category": "Aloft:stadia_controller",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Admin Steam ID 4",
+        "Subcategory": "Admins:admin_panel_settings:3",
+        "Description": "SteamID64 of a player to grant admin rights. Leave as -1 for none",
+        "Keywords": "admin,steam,id,steamid,administrator",
+        "FieldName": "AdminSteamID4",
+        "InputType": "text",
+        "DefaultValue": "-1",
+        "Placeholder": "-1",
+        "Category": "Aloft:stadia_controller",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Proton GE Release Version (Linux)",
+        "Category": "Updates",
+        "Subcategory": "Runtime Configuration:build:3",
+        "Description": "Sets the Proton GE [release version](https://github.com/GloriousEggroll/proton-ge-custom/releases) to install on Linux. Empty = latest. Example: GE-Proton11-6",
+        "Keywords": "proton,release,version",
+        "FieldName": "SpecificReleaseVersion",
+        "InputType": "text",
+        "ParamFieldName": "SpecificReleaseVersion",
+        "DefaultValue": "",
+        "Placeholder": "GE-Proton11-6",
         "EnumValues": {}
     }
 ]
