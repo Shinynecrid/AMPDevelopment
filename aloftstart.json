@@ -1,0 +1,34 @@
+[
+    {
+        "UpdateStageName": "Saves Directory Link",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$base='{{$FullBaseDir}}'; $link=Join-Path $base 'UserData'; $target=Join-Path $env:USERPROFILE 'AppData\\LocalLow\\Astrolabe Interactive\\Aloft'; New-Item -ItemType Directory -Force -Path $target | Out-Null; if (Test-Path -LiteralPath $link) { $item=Get-Item -LiteralPath $link -Force; if (-not ($item.Attributes -band [IO.FileAttributes]::ReparsePoint)) { Write-Output 'UserData is a real folder, leaving it alone'; exit 0 }; if (@($item.Target)[0] -eq $target) { Write-Output 'UserData link already points at the save folder'; exit 0 }; [IO.Directory]::Delete($link) }; New-Item -ItemType Junction -Path $link -Target $target | Out-Null; Write-Output ('Linked '+$link+' -> '+$target)\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Saves Directory Link",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"T='{{$FullRootDir}}.proton/compatdata/pfx/drive_c/users/steamuser/AppData/LocalLow/Astrolabe Interactive/Aloft'; L='{{$FullBaseDir}}UserData'; mkdir -p \\\"$T\\\"; if [ -e \\\"$L\\\" ] && [ ! -L \\\"$L\\\" ]; then echo 'UserData is a real folder, leaving it alone'; exit 0; fi; ln -sfn \\\"$T\\\" \\\"$L\\\" && echo \\\"Linked $L -> $T\\\"\"",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "Create World If Missing",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$w='{{MapName}}'; $base='{{$FullBaseDir}}'; $root=Join-Path $env:USERPROFILE 'AppData\\LocalLow\\Astrolabe Interactive\\Aloft'; $found=@(Get-ChildItem -Path $root -Directory -Filter 'Data*' -ErrorAction SilentlyContinue | ForEach-Object { Join-Path $_.FullName ('Saves\\w_'+$w+'\\_settings.json') } | Where-Object { Test-Path $_ }); if ($found.Count -gt 0) { Write-Output ('World '+$w+' already exists, skipping creation'); exit 0 }; Write-Output ('World '+$w+' not found, creating it'); $out=Join-Path $base 'create_output.txt'; $err=Join-Path $base 'create_error.txt'; $p=Start-Process -FilePath (Join-Path $base 'Aloft.exe') -WorkingDirectory $base -ArgumentList ('-batchmode -nographics -server create#'+$w+'# islandcount#{{IslandCount}}# corruptioncount#normal# creative#{{CreativeMode}}# log#ERROR#') -PassThru -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err; $h=$p.Handle; if (-not $p.WaitForExit(180000)) { $p.Kill(); Write-Output 'World creation timed out after 180s and was stopped' } else { Write-Output ('World creation finished with exit code '+$p.ExitCode) }; if (Test-Path $out) { Get-Content $out -Tail 15 }\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create World If Missing",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"w='{{MapName}}'; base='{{$FullBaseDir}}'; if ls \\\"${base}\\\"UserData/Data*/Saves/\\\"w_${w}\\\"/_settings.json >/dev/null 2>&1; then echo \\\"World ${w} already exists, skipping creation\\\"; exit 0; fi; echo \\\"World ${w} not found, creating it\\\"; cd \\\"$base\\\" || exit 1; env STEAM_COMPAT_DATA_PATH='{{$FullRootDir}}.proton/compatdata' STEAM_COMPAT_CLIENT_INSTALL_PATH='{{$FullBaseDir}}.steam/steam' HOME='{{$FullBaseDir}}' PROTON_USE_WINED3D=1 WINEDEBUG=-all SteamAppId=1660080 timeout -k 10 180 /usr/bin/xvfb-run -a '{{$FullRootDir}}.proton/proton' runinprefix \\\"${base}Aloft.exe\\\" -batchmode -nographics -server \\\"create#${w}#\\\" islandcount#{{IslandCount}}# corruptioncount#normal# creative#{{CreativeMode}}# log#ERROR# > \\\"${base}create_output.txt\\\" 2> \\\"${base}create_error.txt\\\"; echo \\\"World creation finished with exit code $?\\\"; tail -n 15 \\\"${base}create_output.txt\\\"\"",
+        "SkipOnFailure": false
+    }
+]
