@@ -62,6 +62,7 @@ App.Compatibility=None
 App.SteamUpdateAnonymousLogin=False
 App.SteamForceLoginPrompt=True
 App.RapidStartup=False
+App.MonitorChildProcessName=^[A-Za-z]:.*project-reclaimer-dedicated\.exe dedicated$
 App.SupportsUniversalSleep=False
 App.WakeupMode=Any
 App.ApplicationReadyMode=RCONConnected
