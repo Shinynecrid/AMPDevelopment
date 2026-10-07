@@ -1,7 +1,7 @@
 [
     {
         "UpdateStageName": "Server Download",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURLFromJQ",
         "UpdateSourceData": "https://api.github.com/repos/ProjectReclaimer/project-reclaimer-releases/releases/latest",
         "UpdateSourceArgs": "$.assets[?(@.name =~ /^project-reclaimer-dedicated-v.*\\.exe$/)].browser_download_url",
@@ -16,6 +16,22 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
         "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$b='{{$FullBaseDir}}'; $f=Get-ChildItem -Path $b -Filter 'project-reclaimer-dedicated-v*.exe' | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if(-not $f){ Write-Host 'No downloaded server executable found'; exit 1 }; Copy-Item -LiteralPath $f.FullName -Destination (Join-Path $b 'project-reclaimer-dedicated.exe') -Force; Get-ChildItem -Path $b -Filter 'project-reclaimer-dedicated-v*.exe' | Remove-Item -Force; Write-Host ('Installed ' + $f.Name)\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Installation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" || exit 1; f=$(ls -t project-reclaimer-dedicated-v*.exe 2>/dev/null | head -n 1); [ -n \\\"$f\\\" ] || { echo \\\"No downloaded server executable found\\\"; exit 1; }; cp -f \\\"$f\\\" project-reclaimer-dedicated.exe && rm -f project-reclaimer-dedicated-v*.exe && echo \\\"Installed $f\\\"\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Initialise Wine",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"export WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all WINEDLLOVERRIDES=\\\"mscoree,mshtml=\\\"; if [ ! -f \\\"$WINEPREFIX/system.reg\\\" ]; then /usr/bin/xvfb-run -a /usr/bin/wineboot --init && /usr/bin/wine reg add 'HKCU\\Software\\Wine\\Drivers' /v Audio /t REG_SZ /f >/dev/null && /usr/bin/wineserver --wait && echo 'Wine prefix created'; else echo \\\"Wine prefix already exists. Skipping\\\"; fi\"",
         "SkipOnFailure": false
     }
 ]
