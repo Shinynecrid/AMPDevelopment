@@ -1,0 +1,21 @@
+[
+    {
+        "UpdateStageName": "Server Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURLFromJQ",
+        "UpdateSourceData": "https://api.github.com/repos/ProjectReclaimer/project-reclaimer-releases/releases/latest",
+        "UpdateSourceArgs": "$.assets[?(@.name =~ /^project-reclaimer-dedicated-v.*\\.exe$/)].browser_download_url",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Installation",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$b='{{$FullBaseDir}}'; $f=Get-ChildItem -Path $b -Filter 'project-reclaimer-dedicated-v*.exe' | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if(-not $f){ Write-Host 'No downloaded server executable found'; exit 1 }; Copy-Item -LiteralPath $f.FullName -Destination (Join-Path $b 'project-reclaimer-dedicated.exe') -Force; Get-ChildItem -Path $b -Filter 'project-reclaimer-dedicated-v*.exe' | Remove-Item -Force; Write-Host ('Installed ' + $f.Name)\"",
+        "SkipOnFailure": false
+    }
+]
