@@ -1,0 +1,199 @@
+[
+    {
+        "DisplayName": "Server Name",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the name of the server shown in the server browser. Avoid quotes",
+        "Keywords": "server,name,hostname",
+        "FieldName": "ServerName",
+        "InputType": "text",
+        "DefaultValue": "AMP Powered Halo 3 Server",
+        "Required": true,
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Player Limit",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the maximum number of players allowed on the server at one time",
+        "Keywords": "max,players,slots,limit,max_players",
+        "FieldName": "$MaxUsers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "63",
+        "DefaultValue": "16",
+        "Placeholder": "16",
+        "Suffix": "players",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Join Password",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If set, players must enter this password to join. Leave blank to let anyone join. Avoid quotes",
+        "Keywords": "password,join,private",
+        "FieldName": "JoinPassword",
+        "InputType": "password",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Hidden Server",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If enabled, the server is not listed in the server browser and players join it by address",
+        "Keywords": "hidden,unlisted,private,browser",
+        "FieldName": "Hidden",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Public Address",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "The address players connect to, such as a DNS name. Leave blank to detect this machine's public IPv4 address",
+        "Keywords": "public,address,ip,dns,domain",
+        "FieldName": "PublicAddress",
+        "InputType": "text",
+        "DefaultValue": "",
+        "Placeholder": "play.example.com",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Map",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "The map every game is played on, such as Guardian, Valhalla, Last Resort or The Pit. Ignored if a Playlist File is set",
+        "Keywords": "map,level,guardian,valhalla",
+        "FieldName": "MapName",
+        "InputType": "text",
+        "DefaultValue": "Guardian",
+        "Placeholder": "Guardian",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Game Type",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "The game type every game plays, such as Slayer, Capture the Flag or Oddball. May also name a game variant file in content/Game Modes. Ignored if a Playlist File is set",
+        "Keywords": "game,type,mode,gametype,slayer,variant",
+        "FieldName": "GameType",
+        "InputType": "text",
+        "DefaultValue": "Slayer",
+        "Placeholder": "Slayer",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Playlist File",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "Optional playlist of three or more games that players vote on, such as playlists/slayer.playlist.json. Upload the file to the playlists folder. Leave blank to use the Map and Game Type above",
+        "Keywords": "playlist,rotation,vote,games",
+        "FieldName": "PlaylistFile",
+        "InputType": "text",
+        "DefaultValue": "",
+        "Placeholder": "playlists/slayer.playlist.json",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Voice Chat",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "If enabled, players can use voice chat",
+        "Keywords": "voice,chat,audio,mic",
+        "FieldName": "VoiceChat",
+        "InputType": "checkbox",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Text Chat",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "If enabled, players can use text chat",
+        "Keywords": "text,chat,messages",
+        "FieldName": "TextChat",
+        "InputType": "checkbox",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Player Votes",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "If enabled, players may vote to kick a player, end the round or end the game",
+        "Keywords": "votes,vote,kick,endround,endgame",
+        "FieldName": "Votes",
+        "InputType": "checkbox",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Block VPNs",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Security:security:3",
+        "Description": "If enabled, players connecting through a VPN, proxy or hosting provider are refused. Players on your own network and admins are never refused",
+        "Keywords": "vpn,proxy,block,hosting,ban",
+        "FieldName": "BlockVPN",
+        "InputType": "checkbox",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Anti-Cheat",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Security:security:3",
+        "Description": "Detect rejects cheat traffic and logs it without kicking. Enforce does the same and kicks the player. Off performs no checks",
+        "Keywords": "anti,cheat,anticheat,enforce,detect",
+        "FieldName": "AntiCheat",
+        "InputType": "enum",
+        "DefaultValue": "enforce",
+        "EnumValues": {
+            "detect": "Detect",
+            "enforce": "Enforce",
+            "off": "Off"
+        }
+    },
+    {
+        "DisplayName": "Admin Player IDs",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Security:security:3",
+        "Description": "Comma-separated player IDs (64 hexadecimal characters each) that may kick and ban players. Players find their ID in the game client under Settings > Connectivity",
+        "Keywords": "admin,admins,player,id,kick,ban",
+        "FieldName": "Admins",
+        "InputType": "text",
+        "DefaultValue": "",
+        "Placeholder": "0123456789abcdef...",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Browser Listing",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If enabled, this machine runs the discovery master that the server browser queries to list the server. Only one master runs per machine. Disable to list the server on other masters only, or nowhere for direct connect only",
+        "Keywords": "master,browser,discovery,list",
+        "FieldName": "MasterEnabled",
+        "InputType": "checkbox",
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    }
+]

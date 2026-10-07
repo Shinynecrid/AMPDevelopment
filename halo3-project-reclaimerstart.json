@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Generate Server Configuration",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$b='{{$FullBaseDir}}'; foreach($d in 'game','content\\Maps','content\\Game Modes','content\\Mods','playlists','data'){ New-Item -ItemType Directory -Force -Path (Join-Path $b $d) | Out-Null }; $u=New-Object System.Text.UTF8Encoding($false); $bans=Join-Path $b 'bans.json'; if(-not (Test-Path -LiteralPath $bans)){ [IO.File]::WriteAllText($bans,'{ \\\"players\\\": [], \\\"ips\\\": [] }',$u) }; function Q($s){ $q=[string][char]34; $bs=[string][char]92; $q + $s.Replace($bs,$bs+$bs).Replace($q,$bs+$q) + $q }; $admins=(('{{Admins}}'.Split(',') | ForEach-Object { $_.Trim() } | Where-Object { $_ -match '^[0-9a-fA-F]{64}$' } | ForEach-Object { Q $_ }) -join ', '); $pl='{{PlaylistFile}}'.Trim(); if($pl){ $pick=@('playlist = ' + (Q $pl)) } else { $pick=@(('map = ' + (Q '{{MapName}}')), ('game = ' + (Q '{{GameType}}'))) }; $t=@('game = \\\"game\\\"','content = \\\"content\\\"','data = \\\"data\\\"','bans = \\\"bans.json\\\"',('public_address = ' + (Q '{{PublicAddress}}')),'upnp = false','auto_update = false',('admins = [' + $admins + ']'),'','[master]','enabled = {{MasterEnabled}}','port = {{$MasterPort}}','','[rcon]',('password = ' + (Q '{{$RemoteAdminPassword}}')),'address = \\\"127.0.0.1\\\"','','[defaults]','voice = {{VoiceChat}}','text_chat = {{TextChat}}','chat_log = true','votes = {{Votes}}','block_vpn = {{BlockVPN}}','hidden = {{Hidden}}',('password = ' + (Q '{{JoinPassword}}')),'max_players = {{$MaxUsers}}','anti_cheat = \\\"{{AntiCheat}}\\\"','','[[server]]',('name = ' + (Q '{{ServerName}}')),'port = {{$GamePort}}') + $pick; [IO.File]::WriteAllLines((Join-Path $b 'dedicated.toml'),[string[]]$t,$u); Write-Host 'dedicated.toml written'\"",
+        "SkipOnFailure": false
+    }
+]
