@@ -233,5 +233,33 @@
             "False": "false",
             "True": "true"
         }
+    },
+    {
+        "DisplayName": "Download Halo 3 Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "Experimental. If enabled, an update downloads the Halo 3 multiplayer files the server needs through SteamCMD (about 9 GB). The Steam account used at the login prompt must own Halo: The Master Chief Collection and must not use Steam Guard approval on a phone, because the saved login is reused. Disable to supply the files yourself",
+        "Keywords": "steam,download,game,files,mcc,halo,update,steamcmd",
+        "FieldName": "DownloadGameFiles",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Include Campaign Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "If enabled, the update also downloads the Halo 3 campaign files (about 8 GB more). Only needed for saved Forge maps that place campaign vehicles and AI",
+        "Keywords": "campaign,forge,vehicles,ai,download,steam",
+        "FieldName": "IncludeCampaignFiles",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
     }
 ]
