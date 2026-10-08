@@ -40,7 +40,7 @@ App.EnvironmentVariables={"WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64
 App.CommandLineParameterFormat=--{0}={1}
 App.CommandLineParameterDelimiter=
 App.ExitMethod=OS_CLOSE
-App.ExitMethodWindows=CtrlC
+App.ExitMethodWindows=OS_CLOSE
 App.ExitString=
 App.ExitTimeout=10
 App.HasWriteableConsole=False
