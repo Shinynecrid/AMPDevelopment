@@ -194,6 +194,20 @@
         }
     },
     {
+        "DisplayName": "Stats Reporting",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Security:security:3",
+        "Description": "If enabled, the server reports finished games to the Project Reclaimer public stats service, which keeps players' ranks and service records. Disabled by default: the server reports nowhere",
+        "Keywords": "stats,statistics,ranks,service,record,report,privacy",
+        "FieldName": "StatsReporting",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
         "DisplayName": "Anti-Cheat",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Security:security:3",
