@@ -103,32 +103,6 @@
         }
     },
     {
-        "DisplayName": "Use Custom Map",
-        "Category": "Halo 3:stadia_controller",
-        "Subcategory": "Game:sports_esports:2",
-        "Description": "If enabled, every game is played on the Custom Map Name below instead of the Map above. Ignored if a Playlist File is set, or if the Custom Map Name is empty",
-        "Keywords": "custom,map,workshop,mod,forge,use",
-        "FieldName": "UseCustomMap",
-        "InputType": "checkbox",
-        "DefaultValue": "false",
-        "EnumValues": {
-            "False": "false",
-            "True": "true"
-        }
-    },
-    {
-        "DisplayName": "Custom Map Name",
-        "Category": "Halo 3:stadia_controller",
-        "Subcategory": "Game:sports_esports:2",
-        "Description": "The map to play when Use Custom Map is enabled, by its file name without .map, such as hugeass_remastered_mcc. It can be a map from a Workshop item installed through Workshop Item IDs, a map in the content/Mods folder, or a saved Forge map in content/Maps. The map's files must be installed. Avoid quotes",
-        "Keywords": "custom,map,name,workshop,mod,forge,saved",
-        "FieldName": "CustomMapName",
-        "InputType": "text",
-        "DefaultValue": "",
-        "Placeholder": "hugeass_remastered_mcc",
-        "EnumValues": {}
-    },
-    {
         "DisplayName": "Game Type",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Game:sports_esports:2",
@@ -156,6 +130,32 @@
             "Flood Infection": "Flood Infection",
             "UNSC vs Covenant": "UNSC vs Covenant"
         }
+    },
+    {
+        "DisplayName": "Use Custom Map",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "If enabled, every game is played on the Custom Map Name below instead of the Map above. Ignored if a Playlist File is set, or if the Custom Map Name is empty",
+        "Keywords": "custom,map,workshop,mod,forge,use",
+        "FieldName": "UseCustomMap",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Custom Map Name",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "The map to play when Use Custom Map is enabled, by its file name without .map, such as hugeass_remastered_mcc. It can be a map from a Workshop item installed through Workshop Item IDs, a map in the content/Mods folder, or a saved Forge map in content/Maps. The map's files must be installed. Avoid quotes",
+        "Keywords": "custom,map,name,workshop,mod,forge,saved",
+        "FieldName": "CustomMapName",
+        "InputType": "text",
+        "DefaultValue": "",
+        "Placeholder": "hugeass_remastered_mcc",
+        "EnumValues": {}
     },
     {
         "DisplayName": "Custom Game Type",
