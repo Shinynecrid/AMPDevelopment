@@ -173,12 +173,12 @@
         "DisplayName": "Playlist File",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Game:sports_esports:2",
-        "Description": "Optional playlist of three or more games that players vote on, such as playlists/slayer.playlist.json (upload it to the playlists folder). Overrides Map and Game Type",
+        "Description": "Optional playlist of three or more games that players vote on. Enter its file name, such as playlist1 (the playlists folder and .playlist.json ending are added for you), after uploading it to the playlists folder. Overrides Map and Game Type",
         "Keywords": "playlist,rotation,vote,games",
         "FieldName": "PlaylistFile",
         "InputType": "text",
         "DefaultValue": "",
-        "Placeholder": "playlists/slayer.playlist.json",
+        "Placeholder": "playlist1",
         "EnumValues": {}
     },
     {
@@ -310,7 +310,7 @@
         "DisplayName": "Download Halo 3 Files",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Updates:update:4",
-        "Description": "Experimental. Downloads the Halo 3 multiplayer files (about 9 GB) with SteamCMD on the next Update. Needs a Steam account that owns MCC, without phone-approval Steam Guard. Turn it off after the first download",
+        "Description": "Experimental. Downloads the Halo 3 multiplayer files (about 9 GB), including every map and the game's own playlist game types, with SteamCMD on the next Update. Needs a Steam account that owns MCC, without phone-approval Steam Guard. Turn it off after the first download",
         "Keywords": "steam,download,game,files,mcc,halo,update,steamcmd",
         "FieldName": "DownloadGameFiles",
         "InputType": "checkbox",
