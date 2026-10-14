@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "Both",
+        "Port": 3850,
+        "Ref": "GamePort",
+        "Name": "Server Port",
+        "Description": "Port clients connect to (the default address in cloud.xml is 127.0.0.1:3850)"
+    }
+]

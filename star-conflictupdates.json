@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "212070",
+        "ForceDownloadPlatform": "Windows",
+        "SkipOnFailure": false
+    }
+]
