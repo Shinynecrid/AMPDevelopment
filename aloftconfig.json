@@ -3,7 +3,7 @@
         "DisplayName": "Map Name",
         "Category": "Aloft:stadia_controller",
         "Subcategory": "Server:dns:1",
-        "Description": "Sets the name of the world to load. If no world with this name exists, a new one is created automatically on first start. Avoid spaces",
+        "Description": "Sets the name of the world to load. If no world with this name exists, a new one is created automatically on first start. Use letters and numbers only, with no spaces or special characters",
         "Keywords": "map,name,world,mapname",
         "FieldName": "MapName",
         "InputType": "text",

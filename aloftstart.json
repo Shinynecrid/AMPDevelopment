@@ -16,11 +16,20 @@
         "SkipOnFailure": true
     },
     {
+        "UpdateStageName": "Save Map Name",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateFile",
+        "UpdateSourceData": "{{MapName}}",
+        "UpdateSourceArgs": "{{$FullBaseDir}}AMP_mapname.txt",
+        "OverwriteExistingFiles": "True",
+        "SkipOnFailure": "False"
+    },
+    {
         "UpdateStageName": "Create World If Missing",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$w='{{MapName}}'; $base='{{$FullBaseDir}}'; $root=Join-Path $env:USERPROFILE 'AppData\\LocalLow\\Astrolabe Interactive\\Aloft'; $found=@(Get-ChildItem -Path $root -Directory -Filter 'Data*' -ErrorAction SilentlyContinue | ForEach-Object { Join-Path $_.FullName ('Saves\\w_'+$w+'\\_settings.json') } | Where-Object { Test-Path $_ }); if ($found.Count -gt 0) { Write-Output ('World '+$w+' already exists, skipping creation'); exit 0 }; Write-Output ('World '+$w+' not found, creating it'); $out=Join-Path $base 'create_output.txt'; $err=Join-Path $base 'create_error.txt'; $p=Start-Process -FilePath (Join-Path $base 'Aloft.exe') -WorkingDirectory $base -ArgumentList ('-batchmode -nographics -server create#'+$w+'# islandcount#{{IslandCount}}# corruptioncount#normal# creative#{{CreativeMode}}# log#ERROR#') -PassThru -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err; $h=$p.Handle; if (-not $p.WaitForExit(180000)) { $p.Kill(); Write-Output 'World creation timed out after 180s and was stopped' } else { Write-Output ('World creation finished with exit code '+$p.ExitCode) }; if (Test-Path $out) { Get-Content $out -Tail 15 }\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$base='{{$FullBaseDir}}'; $w=(Get-Content -Raw -LiteralPath (Join-Path $base 'AMP_mapname.txt')).Trim(); $root=Join-Path $env:USERPROFILE 'AppData\\LocalLow\\Astrolabe Interactive\\Aloft'; $found=@(Get-ChildItem -Path $root -Directory -Filter 'Data*' -ErrorAction SilentlyContinue | ForEach-Object { Join-Path $_.FullName ('Saves\\w_'+$w+'\\_settings.json') } | Where-Object { Test-Path $_ }); if ($found.Count -gt 0) { Write-Output ('World '+$w+' already exists, skipping creation'); exit 0 }; Write-Output ('World '+$w+' not found, creating it'); $out=Join-Path $base 'create_output.txt'; $err=Join-Path $base 'create_error.txt'; $p=Start-Process -FilePath (Join-Path $base 'Aloft.exe') -WorkingDirectory $base -ArgumentList ('-batchmode -nographics -server create#'+$w+'# islandcount#{{IslandCount}}# corruptioncount#normal# creative#{{CreativeMode}}# log#ERROR#') -PassThru -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err; $h=$p.Handle; if (-not $p.WaitForExit(180000)) { $p.Kill(); Write-Output 'World creation timed out after 180s and was stopped' } else { Write-Output ('World creation finished with exit code '+$p.ExitCode) }; if (Test-Path $out) { Get-Content $out -Tail 15 }\"",
         "SkipOnFailure": false
     },
     {
@@ -28,7 +37,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"w='{{MapName}}'; base='{{$FullBaseDir}}'; if ls \\\"${base}\\\"UserData/Data*/Saves/\\\"w_${w}\\\"/_settings.json >/dev/null 2>&1; then echo \\\"World ${w} already exists, skipping creation\\\"; exit 0; fi; echo \\\"World ${w} not found, creating it\\\"; cd \\\"$base\\\" || exit 1; env STEAM_COMPAT_DATA_PATH='{{$FullRootDir}}.proton/compatdata' STEAM_COMPAT_CLIENT_INSTALL_PATH='{{$FullBaseDir}}.steam/steam' HOME='{{$FullBaseDir}}' PROTON_USE_WINED3D=1 WINEDEBUG=-all SteamAppId=1660080 timeout -k 10 180 /usr/bin/xvfb-run -a '{{$FullRootDir}}.proton/proton' runinprefix \\\"${base}Aloft.exe\\\" -batchmode -nographics -server \\\"create#${w}#\\\" islandcount#{{IslandCount}}# corruptioncount#normal# creative#{{CreativeMode}}# log#ERROR# > \\\"${base}create_output.txt\\\" 2> \\\"${base}create_error.txt\\\"; echo \\\"World creation finished with exit code $?\\\"; tail -n 15 \\\"${base}create_output.txt\\\"\"",
+        "UpdateSourceArgs": "-c \"base='{{$FullBaseDir}}'; w=$(tr -d '[:cntrl:]' < \\\"${base}AMP_mapname.txt\\\"); if ls \\\"${base}\\\"UserData/Data*/Saves/\\\"w_${w}\\\"/_settings.json >/dev/null 2>&1; then echo \\\"World ${w} already exists, skipping creation\\\"; exit 0; fi; echo \\\"World ${w} not found, creating it\\\"; cd \\\"$base\\\" || exit 1; env STEAM_COMPAT_DATA_PATH='{{$FullRootDir}}.proton/compatdata' STEAM_COMPAT_CLIENT_INSTALL_PATH='{{$FullBaseDir}}.steam/steam' HOME='{{$FullBaseDir}}' PROTON_USE_WINED3D=1 WINEDEBUG=-all SteamAppId=1660080 timeout -k 10 180 /usr/bin/xvfb-run -a '{{$FullRootDir}}.proton/proton' runinprefix \\\"${base}Aloft.exe\\\" -batchmode -nographics -server \\\"create#${w}#\\\" islandcount#{{IslandCount}}# corruptioncount#normal# creative#{{CreativeMode}}# log#ERROR# > \\\"${base}create_output.txt\\\" 2> \\\"${base}create_error.txt\\\"; echo \\\"World creation finished with exit code $?\\\"; tail -n 15 \\\"${base}create_output.txt\\\"\"",
         "SkipOnFailure": false
     }
 ]
