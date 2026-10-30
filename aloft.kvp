@@ -42,7 +42,6 @@ App.CommandLineParameterDelimiter=
 App.ExitMethod=SIGTERM
 App.ExitMethodWindows=CtrlC
 App.ExitString=stop
-App.ExitTimeout=30
 App.HasWriteableConsole=False
 App.HasReadableConsole=True
 App.SupportsLiveSettingsChanges=False
