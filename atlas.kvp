@@ -1,5 +1,5 @@
 Meta.DisplayName=ATLAS [WIP]
-Meta.Description=ATLAS Dedicated Server. WORK IN PROGRESS, NOT READY FOR USE: still being tested, and the Linux server needs the legacy OpenSSL 1.0 library
+Meta.Description=ATLAS Dedicated Server. WORK IN PROGRESS, NOT READY FOR USE: still being tested. Linux requires a container and runs the last Linux build (v557.6), which is older than the Windows build
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
 Meta.Author=Shinynecrid
@@ -11,13 +11,14 @@ Meta.MetaConfigManifest=atlasmetaconfig.json
 Meta.ConfigRoot=atlas.kvp
 Meta.MinAMPVersion=2.6.0.4
 Meta.SpecificDockerImage=cubecoders/ampbase:debian
+Meta.ExtraContainerPackages=["libgssapi3t64-heimdal"]
 Meta.DockerRequired=False
-Meta.ContainerPolicy=Supported
+Meta.ContainerPolicy=SupportedOnWindows, RequiredOnLinux
 Meta.ConfigReleaseState=PreRelease
 Meta.ConfigVersion=1
 Meta.ReleaseNotes=Work in progress. Not for production use: still being tested.
 Meta.AppConfigId=2b9914ae-8f4d-43af-8087-7ea9602d5d14
-Meta.ContainerPolicyReason=
+Meta.ContainerPolicyReason=The Linux server needs legacy libraries (OpenSSL 1.0, protobuf 10, libidn 11, OpenLDAP 2.4) that the container provides.
 Meta.NoCommercialUsage=False
 Meta.Prerequisites=[]
 Meta.AppIsMultiIPAware=True
@@ -26,10 +27,10 @@ App.RootDir=./atlas/
 App.BaseDirectory=./atlas/1006030/
 App.ExecutableWin=1006030\ShooterGame\Binaries\Win64\ShooterGameServer.exe
 App.ExecutableLinux=1006030/ShooterGame/Binaries/Linux/ShooterGameServer
-App.WorkingDir=1006030
+App.WorkingDir=1006030{{Linux:/ShooterGame/Binaries/Linux}}
 App.WindowsCommandLineArgs=-servergamelog
 App.LinuxCommandLineArgs=
-App.CommandLineArgs=Ocean?ServerX={{ServerX}}?ServerY={{ServerY}}?Port={{$GamePort}}?QueryPort={{$QueryPort}}?MaxPlayers={{$MaxUsers}}?RCONPort={{$RCONPort}}?RCONEnabled=True?RCONServerGameLogBuffer=600?ServerAdminPassword={{$RemoteAdminPassword}}?SessionName="{{ServerName}}"{{CustomOptions}} -log -server -useallavailablecores {{BattlEye}}{{EnableIdlePlayerKick}}{{ForceAllowCaveFlyers}}{{passivemods}}{{mods}}{{$PlatformArgs}} {{$FormattedArgs}} {{CustomFlags}}
+App.CommandLineArgs=Ocean?ServerX={{ServerX}}?ServerY={{ServerY}}?Port={{$GamePort}}?QueryPort={{$QueryPort}}?MaxPlayers={{$MaxUsers}}?RCONPort={{$RCONPort}}?RCONEnabled=True?RCONServerGameLogBuffer=600?ServerAdminPassword={{$RemoteAdminPassword}}{{CustomOptions}} -log -server -useallavailablecores {{BattlEye}}{{EnableIdlePlayerKick}}{{ForceAllowCaveFlyers}}{{passivemods}}{{mods}}{{$PlatformArgs}} {{$FormattedArgs}} {{CustomFlags}}
 App.ExitMethod=String
 App.ExitString=DoExit
 App.HasWriteableConsole=True
@@ -68,7 +69,7 @@ App.SteamForceLoginPrompt=False
 App.MonitorChildProcessName=
 App.TelnetLoginFormat={0}
 App.SteamUpdateAnonymousLogin=True
-App.EnvironmentVariables={"SteamAppId":"834910"}
+App.EnvironmentVariables={"SteamAppId":"834910","LD_LIBRARY_PATH":"{{$FullRootDir}}legacylibs"}
 App.ApplicationReadyMode=RCONConnected
 Console.FilterMatchRegex=\e\[(\d+;)*(\d+)?[ABCDHJKfmsu]|\e\[?[?\>\=\da-z]+
 Console.FilterMatchReplacement=
