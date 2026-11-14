@@ -9,6 +9,14 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Legacy Libraries (Linux)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"L=\\\"{{$FullRootDir}}legacylibs\\\"; [ -e \\\"$L/libldap_r-2.4.so.2\\\" ] && echo \\\"Legacy libraries already installed\\\" && exit 0; mkdir -p \\\"$L/x\\\" && cd \\\"$L\\\" || exit 1; for u in o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.13 p/protobuf/libprotobuf10_3.0.0-9.1ubuntu1.1 libi/libidn/libidn11_1.33-2.1ubuntu1.2 o/openldap/libldap-2.4-2_2.4.45+dfsg-1ubuntu1.11; do wget -qO p.deb \\\"http://archive.ubuntu.com/ubuntu/pool/main/${u}_amd64.deb\\\" && dpkg-deb -x p.deb x || { echo \\\"Failed to download $u\\\"; rm -rf x p.deb; exit 1; }; done; find x -name 'lib*.so.*' -exec cp -P {} . \\; ; rm -rf x p.deb; echo \\\"Installed legacy libraries\\\"\"",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "SteamCMD Download (Windows)",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "SteamCMD",
