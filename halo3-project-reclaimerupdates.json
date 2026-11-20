@@ -71,6 +71,58 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Halo: Reach Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "976730",
+        "UpdateSourceArgs": "976730",
+        "UpdateSourceTarget": "{{$FullBaseDir}}game",
+        "UpdateSourceItems": "{{ReachFiles}}",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceConditionSetting": "DownloadReachFiles",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Halo: CE Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "976730",
+        "UpdateSourceArgs": "976730",
+        "UpdateSourceTarget": "{{$FullBaseDir}}game",
+        "UpdateSourceItems": "{{Halo1Files}}",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceConditionSetting": "DownloadHalo1Files",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Halo 2 Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "976730",
+        "UpdateSourceArgs": "976730",
+        "UpdateSourceTarget": "{{$FullBaseDir}}game",
+        "UpdateSourceItems": "{{Halo2Files}}",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceConditionSetting": "DownloadHalo2Files",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Halo 3: ODST Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "976730",
+        "UpdateSourceArgs": "976730",
+        "UpdateSourceTarget": "{{$FullBaseDir}}game",
+        "UpdateSourceItems": "1064222,976738",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceConditionSetting": "DownloadOdstFiles",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Workshop Login",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "SteamCMD",

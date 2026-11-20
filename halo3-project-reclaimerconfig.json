@@ -545,6 +545,104 @@
         }
     },
     {
+        "DisplayName": "Download Halo: Reach Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "On the next Update, downloads the Halo: Reach files with SteamCMD so the server can play Reach's multiplayer maps, and keeps them up to date on later Updates. Support for this game is new in Project Reclaimer 0.10 and still early. Needs a Steam account that owns MCC and this game",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,reach,haloreach",
+        "FieldName": "DownloadReachFiles",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Halo: Reach Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "Which Halo: Reach files to download: multiplayer (about 5.6 GB download, 7.8 GB on disk), or multiplayer and campaign (about 6.7 GB more download, 9.7 GB more on disk). The campaign files hold the two missions Forge's Reach objects come from, and are needed for a Reach co-op server. Only used when Download Halo: Reach Files is on",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,reach,campaign,forge,coop",
+        "FieldName": "ReachFiles",
+        "InputType": "enum",
+        "DefaultValue": "1064226,1064225",
+        "EnumValues": {
+            "1064226": "Multiplayer only",
+            "1064226,1064225": "Multiplayer and campaign (default)"
+        }
+    },
+    {
+        "DisplayName": "Download Halo: CE Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "On the next Update, downloads the Halo: Combat Evolved files with SteamCMD so the server can play its multiplayer maps, and keeps them up to date on later Updates. Support for this game is new in Project Reclaimer 0.10 and still early. Needs a Steam account that owns MCC and this game",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,ce,halo1,combat,evolved",
+        "FieldName": "DownloadHalo1Files",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Halo: CE Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "Which Halo: Combat Evolved files to download: multiplayer (about 4.5 GB download, 5.4 GB on disk), or multiplayer and campaign (about 8.5 GB more download, 9.9 GB more on disk, for a campaign server). Only used when Download Halo: CE Files is on",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,ce,halo1,campaign",
+        "FieldName": "Halo1Files",
+        "InputType": "enum",
+        "DefaultValue": "976734",
+        "EnumValues": {
+            "976734": "Multiplayer only (default)",
+            "976734,976733": "Multiplayer and campaign"
+        }
+    },
+    {
+        "DisplayName": "Download Halo 2 Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "On the next Update, downloads the Halo 2 files with SteamCMD so the server can play its multiplayer maps, and keeps them up to date on later Updates. Support for this game is new in Project Reclaimer 0.10 and still early. Needs a Steam account that owns MCC and this game",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,halo2",
+        "FieldName": "DownloadHalo2Files",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Halo 2 Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "Which Halo 2 files to download: multiplayer (about 21 GB download, 30 GB on disk), or multiplayer and campaign (about 22 GB more download, 31 GB more on disk, for a campaign server). Only used when Download Halo 2 Files is on",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,halo2,campaign",
+        "FieldName": "Halo2Files",
+        "InputType": "enum",
+        "DefaultValue": "976736,976737",
+        "EnumValues": {
+            "976736,976737": "Multiplayer only (default)",
+            "976736,976737,976735": "Multiplayer and campaign"
+        }
+    },
+    {
+        "DisplayName": "Download Halo 3: ODST Files",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Updates:update:4",
+        "Description": "On the next Update, downloads the Halo 3: ODST files (about 7 GB download, 8.7 GB on disk) with SteamCMD, plus the Halo 3 campaign files ODST needs (about 7.5 GB download, 9 GB on disk), for an ODST campaign or Firefight server, and keeps them up to date on later Updates. Needs a Steam account that owns MCC, Halo 3 and Halo 3: ODST",
+        "Keywords": "steam,download,game,files,mcc,update,steamcmd,odst,firefight",
+        "FieldName": "DownloadOdstFiles",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
         "DisplayName": "Download Workshop Items",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Updates:update:4",
