@@ -1,10 +1,21 @@
 [
     {
         "UpdateStageName": "Server Download",
-        "UpdateSourcePlatform": "All",
+        "UpdateSourcePlatform": "Windows",
         "UpdateSource": "FetchURLFromJQ",
         "UpdateSourceData": "https://api.github.com/repos/ProjectReclaimer/project-reclaimer-releases/releases/latest",
         "UpdateSourceArgs": "$.assets[?(@.name =~ /^project-reclaimer-dedicated-v.*\\.exe$/)].browser_download_url",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURLFromJQ",
+        "UpdateSourceData": "https://api.github.com/repos/ProjectReclaimer/project-reclaimer-releases/releases/latest",
+        "UpdateSourceArgs": "$.assets[?(@.name =~ /^project-reclaimer-dedicated-v.*-linux-x86_64\\.tar\\.gz$/)].browser_download_url",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": true,
@@ -23,7 +34,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" || exit 1; f=$(ls -t project-reclaimer-dedicated-v*.exe 2>/dev/null | head -n 1); [ -n \\\"$f\\\" ] || { echo \\\"No downloaded server executable found\\\"; exit 1; }; cp -f \\\"$f\\\" project-reclaimer-dedicated.exe && rm -f project-reclaimer-dedicated-v*.exe && echo \\\"Installed $f\\\"\"",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" || exit 1; f=$(ls -t project-reclaimer-dedicated-v*-linux-x86_64.tar.gz 2>/dev/null | head -n 1); [ -n \\\"$f\\\" ] || { echo \\\"No downloaded server package found\\\"; exit 1; }; tar -xzf \\\"$f\\\" --strip-components=1 --wildcards '*/project-reclaimer' || exit 1; rm -f project-reclaimer-dedicated-v*-linux-x86_64.tar.gz project-reclaimer-dedicated.exe; rm -rf .wine; echo \\\"Installed $f\\\"\"",
         "SkipOnFailure": false
     },
     {
@@ -99,14 +110,6 @@
         "UpdateSourceConditionSetting": "DownloadWorkshopItems",
         "UpdateSourceConditionValue": "true",
         "ProcessToolOutput": true,
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Initialise Wine",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"export WINEPREFIX=\\\"{{$FullRootDir}}.wine\\\" WINEARCH=win64 WINEDEBUG=-all WINEDLLOVERRIDES=\\\"mscoree,mshtml=\\\"; if [ ! -f \\\"$WINEPREFIX/system.reg\\\" ]; then /usr/bin/xvfb-run -a /bin/bash -c 'K=$(printf \\\"HKCU\\134Software\\134Wine\\134Drivers\\\"); /usr/bin/wineboot --init && /usr/bin/wine reg add \\\"$K\\\" /v Audio /t REG_SZ /f >/dev/null && /usr/bin/wineserver --wait' && echo 'Wine prefix created'; else echo \\\"Wine prefix already exists. Skipping\\\"; fi\"",
         "SkipOnFailure": false
     }
 ]
