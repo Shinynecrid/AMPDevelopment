@@ -76,6 +76,34 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Tick Rate",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Ticks per second the server simulates in multiplayer games. 30 uses about half the processor time but gives players fewer updates and a slightly higher ping. Co-op games keep their own rate, and players' games always run at 60",
+        "Keywords": "tick,rate,tickrate,tick_rate,performance,cpu",
+        "FieldName": "TickRate",
+        "InputType": "enum",
+        "DefaultValue": "60",
+        "EnumValues": {
+            "60": "60 (default)",
+            "30": "30 (saves processor time)"
+        }
+    },
+    {
+        "DisplayName": "Network Model",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "How multiplayer games are networked: Enhanced (Project Reclaimer's own) or Classic (Halo 3's original). Changing it restarts the server once no players are on",
+        "Keywords": "network,model,netcode,classic,enhanced,network_model",
+        "FieldName": "NetworkModel",
+        "InputType": "enum",
+        "DefaultValue": "enhanced",
+        "EnumValues": {
+            "enhanced": "Enhanced (default)",
+            "classic": "Classic (Halo 3's own)"
+        }
+    },
+    {
         "DisplayName": "Map",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Game:sports_esports:2",
@@ -307,6 +335,78 @@
         }
     },
     {
+        "DisplayName": "Camera",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "Camera view for players: First Person, Player's Choice, or Third Person",
+        "Keywords": "camera,view,first,third,person,perspective",
+        "FieldName": "Camera",
+        "InputType": "enum",
+        "DefaultValue": "first_person",
+        "EnumValues": {
+            "first_person": "First Person",
+            "player_choice": "Player's Choice",
+            "third_person": "Third Person"
+        }
+    },
+    {
+        "DisplayName": "Allow Bots",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "Lets bots join the server",
+        "Keywords": "bots,bot,ai,allow_bots",
+        "FieldName": "AllowBots",
+        "InputType": "checkbox",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Minimum Players",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "Players the server waits for in its lobby before the game vote or the automatic start begins, from 1 up to the Player Limit (split-screen players count)",
+        "Keywords": "min,minimum,players,lobby,wait,min_players",
+        "FieldName": "MinPlayers",
+        "InputType": "number",
+        "MinValue": "1",
+        "MaxValue": "127",
+        "DefaultValue": "1",
+        "Placeholder": "1",
+        "Suffix": "players",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Start Countdown",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "Seconds the lobby counts down once enough players are in and the game is chosen",
+        "Keywords": "start,countdown,lobby,timer,start_countdown_seconds",
+        "FieldName": "StartCountdownSeconds",
+        "InputType": "number",
+        "MinValue": "0",
+        "DefaultValue": "3",
+        "Placeholder": "3",
+        "Suffix": "seconds",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Post-Game Time",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Game:sports_esports:2",
+        "Description": "Seconds the post-game screen stays before the next game",
+        "Keywords": "post,game,postgame,scoreboard,time,post_game_seconds",
+        "FieldName": "PostGameSeconds",
+        "InputType": "number",
+        "MinValue": "0",
+        "DefaultValue": "15",
+        "Placeholder": "15",
+        "Suffix": "seconds",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Block VPNs",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Security:security:3",
@@ -350,6 +450,21 @@
         }
     },
     {
+        "DisplayName": "Ping Limit",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Security:security:3",
+        "Description": "Highest ping a player may have when joining, up to 1000. 0 lets everyone join",
+        "Keywords": "ping,limit,max,latency,max_ping",
+        "FieldName": "MaxPing",
+        "InputType": "number",
+        "MinValue": "0",
+        "MaxValue": "1000",
+        "DefaultValue": "0",
+        "Placeholder": "0",
+        "Suffix": "ms",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "RCON Address",
         "Category": "Halo 3:stadia_controller",
         "Subcategory": "Security:security:3",
@@ -370,6 +485,18 @@
         "Description": "Comma-separated player IDs (64 hexadecimal characters each) that may kick and ban players. Players find their ID in the game client under Settings > Connectivity",
         "Keywords": "admin,admins,player,id,kick,ban",
         "FieldName": "Admins",
+        "InputType": "text",
+        "DefaultValue": "",
+        "Placeholder": "0123456789abcdef...",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Vote-Kick Immune Player IDs",
+        "Category": "Halo 3:stadia_controller",
+        "Subcategory": "Security:security:3",
+        "Description": "Comma-separated player IDs (64 hexadecimal characters each) that no vote can kick, without giving them admin rights. Admins are always immune",
+        "Keywords": "vote,kick,immune,player,id,vote_kick_immune",
+        "FieldName": "VoteKickImmune",
         "InputType": "text",
         "DefaultValue": "",
         "Placeholder": "0123456789abcdef...",
