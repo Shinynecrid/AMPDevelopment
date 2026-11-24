@@ -6,19 +6,6 @@
         "UpdateSourceData": "730",
         "UpdateSourceArgs": "730",
         "UpdateSourceVersion": "public",
-        "UpdateSourceConditionSetting": "EnableBeta",
-        "UpdateSourceConditionValue": "false",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "SteamCMD Server Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "SteamCMD",
-        "UpdateSourceData": "730",
-        "UpdateSourceArgs": "730",
-        "UpdateSourceVersion": "{{BetaBranch}}",
-        "UpdateSourceConditionSetting": "EnableBeta",
-        "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
     },
     {
@@ -46,7 +33,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$P='{{$FullRootDir}}cs2-modded-server-master\\game\\csgo'; $C='{{$FullBaseDir}}game\\csgo'; if(-not (Test-Path -LiteralPath $P)){ Write-Host 'Modpack not found'; exit 1 }; Remove-Item -Recurse -Force -LiteralPath \\\"$C\\addons\\\",\\\"$C\\cfg\\settings\\\" -ErrorAction SilentlyContinue; Copy-Item -Path \\\"$P\\*\\\" -Destination $C -Recurse -Force; Copy-Item -Path \\\"$P\\addons\\windows\\*\\\" -Destination $C -Recurse -Force; $X=\\\"$C\\addons\\counterstrikesharp\\plugins\\\"; if(Test-Path -LiteralPath \\\"$X\\InventorySimulator\\\"){ Remove-Item -Recurse -Force -LiteralPath \\\"$X\\disabled\\InventorySimulator\\\" -ErrorAction SilentlyContinue; Move-Item -LiteralPath \\\"$X\\InventorySimulator\\\" -Destination \\\"$X\\disabled\\\" }; $U='{{$FullRootDir}}custom_files'; New-Item -ItemType Directory -Force -Path $U | Out-Null; Copy-Item -Path \\\"$U\\*\\\" -Destination $C -Recurse -Force; $G=\\\"$C\\gameinfo.gi\\\"; if(-not (Select-String -LiteralPath $G -SimpleMatch 'csgo/addons/metamod' -Quiet)){ (Get-Content -LiteralPath $G) -replace '^\\s*Game\\s*csgo\\s*$', \\\"`t`t`tGame`tcsgo/addons/metamod`n`t`t`tGame`tcsgo\\\" | Set-Content -LiteralPath $G }; Remove-Item -Recurse -Force -LiteralPath '{{$FullRootDir}}cs2-modded-server-master'; Write-Host 'Modpack installed'\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$R='{{$FullRootDir}}'; $P=$R+'cs2-modded-server-master'; $S=\\\"$P\\game\\csgo\\\"; $C='{{$FullBaseDir}}game\\csgo'; if(-not(Test-Path -LiteralPath $S)){Write-Host 'Modpack not found'; exit 1}; Remove-Item -Recurse -Force -LiteralPath \\\"$C\\addons\\\",\\\"$C\\cfg\\settings\\\" -EA 0; Copy-Item \\\"$S\\*\\\" $C -Recurse -Force; Copy-Item \\\"$S\\addons\\windows\\*\\\" $C -Recurse -Force; $X=\\\"$C\\addons\\counterstrikesharp\\plugins\\\"; if(Test-Path -LiteralPath \\\"$X\\InventorySimulator\\\"){Remove-Item -Recurse -Force -LiteralPath \\\"$X\\disabled\\InventorySimulator\\\" -EA 0; Move-Item -LiteralPath \\\"$X\\InventorySimulator\\\" \\\"$X\\disabled\\\"}; $G=\\\"$C\\gameinfo.gi\\\"; if(-not(Select-String -LiteralPath $G -SimpleMatch 'csgo/addons/metamod' -Quiet)){(Get-Content -LiteralPath $G) -replace '^\\s*Game\\s*csgo\\s*$',\\\"`t`t`tGame`tcsgo/addons/metamod`n`t`t`tGame`tcsgo\\\" | Set-Content -LiteralPath $G}; Remove-Item -Recurse -Force -LiteralPath $P; Write-Host 'Modpack installed'\"",
         "SkipOnFailure": false
     },
     {
@@ -54,7 +41,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"P=\\\"{{$FullRootDir}}cs2-modded-server-master/game/csgo\\\"; C=\\\"{{$FullBaseDir}}game/csgo\\\"; [ -d \\\"$P\\\" ] || { echo \\\"Modpack not found\\\"; exit 1; }; rm -rf \\\"$C/addons\\\" \\\"$C/cfg/settings\\\" && cp -a \\\"$P/.\\\" \\\"$C/\\\" || exit 1; X=\\\"$C/addons/counterstrikesharp/plugins\\\"; [ -d \\\"$X/InventorySimulator\\\" ] && rm -rf \\\"$X/disabled/InventorySimulator\\\" && mv \\\"$X/InventorySimulator\\\" \\\"$X/disabled/\\\"; U=\\\"{{$FullRootDir}}custom_files\\\"; mkdir -p \\\"$U\\\" && cp -a \\\"$U/.\\\" \\\"$C/\\\"; G=\\\"$C/gameinfo.gi\\\"; grep -q csgo/addons/metamod \\\"$G\\\" || sed -i \\\"/^\\s*Game\\s*csgo\\s*$/ { s//\\t\\t\\tGame\\tcsgo\\/addons\\/metamod\\n&/ }\\\" \\\"$G\\\"; rm -rf \\\"{{$FullRootDir}}cs2-modded-server-master\\\"; echo \\\"Modpack installed\\\"\"",
+        "UpdateSourceArgs": "-c \"P=\\\"{{$FullRootDir}}cs2-modded-server-master/game/csgo\\\"; C=\\\"{{$FullBaseDir}}game/csgo\\\"; [ -d \\\"$P\\\" ] || { echo \\\"Modpack not found\\\"; exit 1; }; rm -rf \\\"$C/addons\\\" \\\"$C/cfg/settings\\\" && cp -a \\\"$P/.\\\" \\\"$C/\\\" || exit 1; X=\\\"$C/addons/counterstrikesharp/plugins\\\"; [ -d \\\"$X/InventorySimulator\\\" ] && rm -rf \\\"$X/disabled/InventorySimulator\\\" && mv \\\"$X/InventorySimulator\\\" \\\"$X/disabled/\\\"; G=\\\"$C/gameinfo.gi\\\"; grep -q csgo/addons/metamod \\\"$G\\\" || sed -i \\\"/^\\s*Game\\s*csgo\\s*$/ { s//\\t\\t\\tGame\\tcsgo\\/addons\\/metamod\\n&/ }\\\" \\\"$G\\\"; rm -rf \\\"{{$FullRootDir}}cs2-modded-server-master\\\"; echo \\\"Modpack installed\\\"\"",
         "SkipOnFailure": false
     }
 ]
