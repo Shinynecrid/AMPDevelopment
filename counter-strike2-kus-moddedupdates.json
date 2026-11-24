@@ -1,0 +1,60 @@
+[
+    {
+        "UpdateStageName": "SteamCMD Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "730",
+        "UpdateSourceArgs": "730",
+        "UpdateSourceVersion": "public",
+        "UpdateSourceConditionSetting": "EnableBeta",
+        "UpdateSourceConditionValue": "false",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "730",
+        "UpdateSourceArgs": "730",
+        "UpdateSourceVersion": "{{BetaBranch}}",
+        "UpdateSourceConditionSetting": "EnableBeta",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Component Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1007",
+        "UpdateSourceTarget": "{{$FullBaseDir}}game/bin/win64",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Modpack Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://codeload.github.com/kus/cs2-modded-server/zip/refs/heads/master",
+        "UpdateSourceArgs": "cs2-modded-server.zip",
+        "UpdateSourceTarget": "{{$FullRootDir}}modpack",
+        "UnzipUpdateSource": true,
+        "DeleteAfterExtract": true,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Modpack Install",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$P='{{$FullRootDir}}modpack\\cs2-modded-server-master\\game\\csgo'; $C='{{$FullBaseDir}}game\\csgo'; if(-not (Test-Path -LiteralPath $P)){ Write-Host 'Modpack not found'; exit 1 }; Remove-Item -Recurse -Force -LiteralPath \\\"$C\\addons\\\",\\\"$C\\cfg\\settings\\\" -ErrorAction SilentlyContinue; Copy-Item -Path \\\"$P\\*\\\" -Destination $C -Recurse -Force; Copy-Item -Path \\\"$P\\addons\\windows\\*\\\" -Destination $C -Recurse -Force; $X=\\\"$C\\addons\\counterstrikesharp\\plugins\\\"; if(Test-Path -LiteralPath \\\"$X\\InventorySimulator\\\"){ Remove-Item -Recurse -Force -LiteralPath \\\"$X\\disabled\\InventorySimulator\\\" -ErrorAction SilentlyContinue; Move-Item -LiteralPath \\\"$X\\InventorySimulator\\\" -Destination \\\"$X\\disabled\\\" }; $U='{{$FullRootDir}}custom_files'; New-Item -ItemType Directory -Force -Path $U | Out-Null; Copy-Item -Path \\\"$U\\*\\\" -Destination $C -Recurse -Force; $G=\\\"$C\\gameinfo.gi\\\"; if(-not (Select-String -LiteralPath $G -SimpleMatch 'csgo/addons/metamod' -Quiet)){ (Get-Content -LiteralPath $G) -replace '^\\s*Game\\s*csgo\\s*$', \\\"`t`t`tGame`tcsgo/addons/metamod`n`t`t`tGame`tcsgo\\\" | Set-Content -LiteralPath $G }; Remove-Item -Recurse -Force -LiteralPath '{{$FullRootDir}}modpack'; Write-Host 'Modpack installed'\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Modpack Install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"P=\\\"{{$FullRootDir}}modpack/cs2-modded-server-master/game/csgo\\\"; C=\\\"{{$FullBaseDir}}game/csgo\\\"; [ -d \\\"$P\\\" ] || { echo \\\"Modpack not found\\\"; exit 1; }; rm -rf \\\"$C/addons\\\" \\\"$C/cfg/settings\\\" && cp -a \\\"$P/.\\\" \\\"$C/\\\" || exit 1; X=\\\"$C/addons/counterstrikesharp/plugins\\\"; [ -d \\\"$X/InventorySimulator\\\" ] && rm -rf \\\"$X/disabled/InventorySimulator\\\" && mv \\\"$X/InventorySimulator\\\" \\\"$X/disabled/\\\"; U=\\\"{{$FullRootDir}}custom_files\\\"; mkdir -p \\\"$U\\\" && cp -a \\\"$U/.\\\" \\\"$C/\\\"; G=\\\"$C/gameinfo.gi\\\"; grep -q csgo/addons/metamod \\\"$G\\\" || sed -i \\\"/^\\s*Game\\s*csgo\\s*$/ { s//\\t\\t\\tGame\\tcsgo\\/addons\\/metamod\\n&/ }\\\" \\\"$G\\\"; rm -rf \\\"{{$FullRootDir}}modpack\\\"; echo \\\"Modpack installed\\\"\"",
+        "SkipOnFailure": false
+    }
+]
