@@ -77,7 +77,7 @@
         "UpdateSourceData": "976730",
         "UpdateSourceArgs": "976730",
         "UpdateSourceTarget": "{{$FullBaseDir}}game",
-        "UpdateSourceItems": "{{ReachFiles}}",
+        "UpdateSourceItems": "1064226,1064225",
         "ForceDownloadPlatform": "Windows",
         "UpdateSourceConditionSetting": "DownloadReachFiles",
         "UpdateSourceConditionValue": "true",
